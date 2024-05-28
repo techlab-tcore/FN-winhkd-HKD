@@ -1,0 +1,719 @@
+/**
+Copyright 2019
+**/
+
+/* Portrait */
+@media screen and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media screen and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)
+{
+}
+
+/* ----------- Android ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 360px) and (max-device-width: 846px) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 360px) and (max-device-width: 846px) and (orientation: landscape)
+{ 
+}
+
+/* ----------- Galaxy S9, 9+ ----------- */
+
+/* Portrait */
+/* @media only screen and (min-device-width: 360px) and (max-device-width: 740px) and (orientation: portrait) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 658px) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 658px) and (orientation: landscape)
+{ 
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)
+{ 
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+{ 
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape)
+{ 
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape)
+{ 
+}
+
+/* ----------- IPad ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)
+{
+    ::-webkit-scrollbar { display: none; }
+
+    main {
+        padding-bottom: 100px;
+    }
+
+    .btn-spin {
+        top: 31%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -38px 0 0 -35px !important;
+    }
+
+    .wrap-jackpot figure {
+        width: 100%
+    }
+
+    .btn-login, .btn-login:hover, .btn-login:focus, .btn-login:active:focus,
+    .btn-register, .btn-register:hover, .btn-register:focus, .btn-register:active:focus {
+        font-size: 4vw;
+        padding: .5rem .8rem;
+    }
+
+    .header-username, .header-balance {
+        font-size: 2.5vw;
+    }
+
+    .header-balance::before {
+        left: -10px;
+    }
+
+    .btn-category {
+        font-size: 3vw;
+    }
+
+    .offcanvas.offcanvas-bottom a,
+    .offcanvas.offcanvas-bottom .btn-offcanvas-close {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .loginForm, .smsRegisForm {
+        width: 90%;
+    }
+
+    .loginForm .input-group-text, .smsRegisForm .input-group-text {
+        font-size: 1rem;
+    }
+
+    .loginForm input.form-control, .loginForm input.form-control:focus, .loginForm input.form-control:active, .loginForm input.form-control:focus:active,
+    .smsRegisForm input.form-control, .smsRegisForm input.form-control:focus, .smsRegisForm input.form-control:active, .smsRegisForm input.form-control:focus:active {
+        /* font-size: 1rem; */
+        font-size: .7rem;
+    }
+
+    .general-info article h4, .general-info article a {
+        font-size: 1.8rem;
+    }
+
+    .payment-method > li > a {
+        font-size: 1rem;
+    }
+
+    .payment-method > li > a span {
+        padding-left: 40px;
+    }
+
+    .nav-account a {
+        font-size: 1rem;
+    }
+
+    .game-menu a.game-tab {
+        height: 3.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+    
+    .game-menu a.slot-tab {
+        height: 2.8rem;
+        text-shadow: none;
+        padding: 0 .3rem;
+    }
+
+    .hotgame {
+        height:120px;
+        width:30%;;
+    }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)
+{ 
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media screen and (min-width: 1600px) {
+    .btn-spin {
+        top: 43%;
+    }
+}

@@ -1,0 +1,65 @@
+CRITICAL - 2024-05-12 21:15:27 --> Undefined array key "username"
+in APPPATH\Views\template\header.php on line 22.
+ 1 APPPATH\Views\template\header.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\template\\header.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('template/header', [], true)
+ 5 APPPATH\Controllers\General_control.php(208): view('template/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-12 21:16:22 --> Undefined array key "username"
+in APPPATH\Views\template\header.php on line 22.
+ 1 APPPATH\Views\template\header.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\template\\header.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('template/header', [], true)
+ 5 APPPATH\Controllers\General_control.php(208): view('template/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-12 21:16:22 --> Undefined array key "username"
+in APPPATH\Views\template\header.php on line 22.
+ 1 APPPATH\Views\template\header.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\template\\header.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('template/header', [], true)
+ 5 APPPATH\Controllers\General_control.php(208): view('template/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-12 21:16:26 --> Undefined array key "username"
+in APPPATH\Views\template\header.php on line 22.
+ 1 APPPATH\Views\template\header.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "username"', 'APPPATH\\Views\\template\\header.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\template\\header.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('template/header', [], true)
+ 5 APPPATH\Controllers\General_control.php(208): view('template/header', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-12 21:16:39 --> syntax error, unexpected token ";"
+in APPPATH\Views\template\header.php on line 22.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('template/header', [], true)
+ 3 APPPATH\Controllers\General_control.php(208): view('template/header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-12 22:58:30 --> Cannot redeclare App\Controllers\General_control::index_slot()
+in APPPATH\Controllers\General_control.php on line 1276.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-12 22:59:01 --> Invalid file: game/index.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('game/index.php')
+ 2 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('game/index', [], true)
+ 3 APPPATH\Controllers\General_control.php(1053): view('game/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(902): App\Controllers\General_control->index_slot()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\General_control))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

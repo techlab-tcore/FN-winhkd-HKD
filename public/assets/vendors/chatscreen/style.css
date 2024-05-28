@@ -1,0 +1,58 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Work+Sans:300,400,500,600,700');
+
+body {
+    color: #191919;
+    font-family: 'Work Sans', sans-serif;
+    background-image: url("images/bg_mb.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #060106;
+}
+
+img {
+    vertical-align: baseline;
+} */
+
+
+/*--------------------------------------------------------------
+# Outer Container
+--------------------------------------------------------------*/
+@media screen and (min-width: 992px) {
+    /* body {
+        color: #191919;
+        font-family: 'Work Sans', sans-serif;
+        background-image: url("images/bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #060106;
+    } */
+    .outer-container {
+        padding-left: 80px;
+    }
+}
+
+@media screen and (min-width: 768px) 
+{
+    .no-padding {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+/* .home-page {
+    padding-top: 10px;
+} */
+
+@media screen and (min-width: 768px) {
+    .home-page {
+        padding: 0;
+    }
+
+    .home-page .portfolio-content {
+        margin-bottom: 0;
+    }
+}
