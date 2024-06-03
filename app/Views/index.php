@@ -167,18 +167,15 @@
             <img src="../assets/img/home/download_app.png" alt="Download App" loading="lazy">
         </div>
         <div class="app-content">
-            <h1><?=lang('Nav.downloadapp');?></h1>
-            <div class="d-flex">
-                <div>
-                    <div class="qrcode">
-                        <img src="../assets/img/qrcode.png" alt="QR Code">
-                    </div>
-                    <a href="">
-                        <img src="../assets/img/home/btn_googleplay.png" alt="Google Play">
-                    </a>
-                </div>
-                <div>
-                </div>
+            <h1 class="text-nowrap justify-content-center"><?=lang('Nav.downloadapp');?></h1>
+            <div class="text-center mx-auto p-2 bg-light rounded-3 col-12 col-lg-6 col-md-6">
+                <!--<div class="qrcode">
+                    <img src="../assets/img/qrcode.png" alt="QR Code">
+                </div>-->
+                <figure id="appQR" class="p-0 m-0"></figure>
+                <!--<a href="">
+                    <img src="../assets/img/home/btn_googleplay.png" alt="Google Play">
+                </a>-->
             </div>
         </div>
     </div>
@@ -222,6 +219,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             callingSport();
         }
     });
+
+    //Download app QR
+    downloadAppQR();
     
 	if( logged ) {
         announcementPopList();
@@ -319,6 +319,16 @@ async function announcementPopList()
     })
     .fail(function() {
         swal.fire("Error!", "Oopss! There are something wrong. Please try again later.", "error");
+    });
+}
+
+//Download app QR
+function downloadAppQR()
+{
+    const appURL = '<?=$_ENV['androidAppURL'];?>';
+    var qcode = new QRCode(document.getElementById("appQR"), {
+        text: appURL,
+        correctLevel : QRCode.CorrectLevel.H
     });
 }
 </script>

@@ -117,8 +117,8 @@
                 <h1 class="modal-title fs-5"><?=lang('Nav.instanttransfer');?></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-0">
-                <article class="depositScreen" id="depositScreen"></article>
+            <div class="modal-body p-0 bg-white">
+                <article class="depositScreen h-100" id="depositScreen"></article>
             </div>
             <div class="modal-footer border-light bg-55vp4">
                 <button type="button" class="btn btn-55vp" data-bs-dismiss="modal"><?=lang('Nav.close');?></button>
@@ -634,11 +634,11 @@ function submitPGatetway(params)
                         node.seamless;
                         document.getElementById("depositScreen").appendChild(node);
                     } else {
-                        // var win = window.open(obj.paymentGatewayUrl + '?verify=' + ss, '_blank');
-                        // win.document.write(data);
-                        // win.document.close();
+                        var win = window.open(obj.paymentGatewayUrl + '?verify=' + ss, '_blank');
+                        win.document.write(data);
+                        win.document.close();
 
-                        byPassBlockPopUp(obj.paymentGatewayUrl + '?verify=' + ss);
+                        //byPassBlockPopUp(obj.paymentGatewayUrl + '?verify=' + ss);
                     }
                 },
                 error: function(xhr, type, exception){},
