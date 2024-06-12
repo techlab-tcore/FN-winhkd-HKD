@@ -43,6 +43,7 @@
 <link rel="stylesheet" href="<?=base_url('../assets/vendors/sweetalert2/sweetalert2.min.css');?>">
 <link rel="stylesheet" href="<?=base_url('../assets/vendors/slick/css/slick.css');?>" />
 <link rel="stylesheet" href="<?=base_url('../assets/css/icomoon.css');?>" />
+<link rel="stylesheet" href="<?=base_url('../assets/css/fishico.css');?>" />
 <link rel="stylesheet" href="<?=base_url('../assets/css/style.css?v='.rand());?>">
 <link rel="stylesheet" href="<?=base_url('../assets/vendors/chatscreen/style.css?v='.rand());?>">
 </head>

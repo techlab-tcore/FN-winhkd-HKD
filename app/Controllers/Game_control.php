@@ -913,14 +913,14 @@ class Game_control extends BaseController
                             foreach( $res['data'] as $g ):
                                 if( $g['status']==1 && $g['type']==$minigametype ):
                                     $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 d-flex rounded-4">';
-                                    $game .= '<a class="d-block text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="singleGameTransferBox(\'2\', \''.$g['name'][$lng].'\', \''.$s['code'].'\',\''.$g['code'].'\',\''.$s['name'].'\');">';
-                                    $game .= '<img class="w-100 rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                    $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="singleGameTransferBox(\'2\', \''.$g['name'][$lng].'\', \''.$s['code'].'\',\''.$g['code'].'\',\''.$s['name'].'\');">';
+                                    $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
                                     $game .= '</a>';
                                     $game .= '</li>';
                                 elseif( $g['status']==2 && $g['type']==$minigametype ):
                                     $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 maintenance d-flex rounded-4">';
-                                    $game .= '<a class="d-block text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
-                                    $game .= '<img class="w-100 rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                    $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
+                                    $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
                                     $game .= '</a>';
                                     $game .= '</li>';
                                 endif;
@@ -941,14 +941,14 @@ class Game_control extends BaseController
                                 foreach( $res['data'] as $g ):
                                     if( $g['status']==1 && $g['type']==$minigametype ):
                                         $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 d-flex rounded-4">';
-                                        $game .= '<a class="d-block text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                        $game .= '<img class="w-100 rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                        $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
+                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
                                         $game .= '</a>';
                                         $game .= '</li>';
                                     elseif( $g['status']==2 && $g['type']==$minigametype ):
                                         $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 maintenance d-flex rounded-4">';
-                                        $game .= '<a class="d-block text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
-                                        $game .= '<img class="w-100 rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                        $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
+                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
                                         $game .= '</a>';
                                         $game .= '</li>';
                                     endif;

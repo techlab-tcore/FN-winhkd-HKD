@@ -121,7 +121,7 @@
             </div>
             <div>
                 <div class="providers-tab" target="#providersFishing">
-                    <i class="icon-slot"></i>
+                    <i class="icon-fish-solid"></i>
                     <span><?=strtoupper(lang('Nav.fishing'));?></span>
                 </div>
             </div>
@@ -165,7 +165,7 @@
             </div>
         </div>
         <div id="providersFishing" class="tabContent container" style="display:none">
-            <ul id="grid-fishing" class="row p-0 gx-1 game-list justify-content-center">
+            <ul id="grid-fishing" class="list-unstyled row p-0 gx-1 game-list justify-content-center">
             </ul>
         </div>
         <!-- <div id="providersLottery" class="tabContent container" style="display:none">

@@ -88,6 +88,7 @@ $routes->get('slot', 'General_control::index_slot');
 $routes->get('casino', 'General_control::index_casino');
 $routes->get('sport', 'General_control::index_sport');
 $routes->get('lottery', 'General_control::index_lottery');
+$routes->get('fishing', 'General_control::index_fishing');
 
 $routes->resource('User_control');
 $routes->post('tac/set', 'User_control::tac');

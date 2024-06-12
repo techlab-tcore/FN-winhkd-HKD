@@ -1115,6 +1115,20 @@ class General_control extends BaseController
 		echo view('template/end', $data);
 	}
 
+	public function index_fishing()
+	{
+		$data['session'] = session()->get('logged_in') ? true : false;
+
+		$data['secTitle'] = lang('Nav.fishing');
+
+		echo view('template/start');
+		echo view('template/header');
+        echo view('games/fishing', $data);
+		echo view('template/footer');
+		echo view('template/end', $data);
+	}
+
+
 	/*
 	Promotion
 	*/

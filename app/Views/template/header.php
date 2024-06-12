@@ -111,14 +111,14 @@
                         <span><?=strtoupper(lang('Nav.home'));?></span>
                     </a>
                 </li>
-                <li data-page="sport">
-                    <a href="<?=base_url('sport');?>">
-                        <i class="icon-ball"></i>
-                        <span><?=strtoupper(lang('Nav.sport'));?></span>
+                <li data-page="slot">
+                    <a href="<?=base_url('slot');?>">
+                        <i class="icon-slot"></i>
+                        <span><?=strtoupper(lang('Nav.slot'));?></span>
                     </a>
                     <div class="dropdown-content">
                         <div class="container clearfix">
-                            <div id="grid-sport-menu" class="slick-slider">
+                            <div id="grid-slot-menu" class="slick-slider">
                             </div>
                         </div>
                     </div>
@@ -135,14 +135,26 @@
                         </div>
                     </div>
                 </li>
-                <li data-page="slot">
-                    <a href="<?=base_url('slot');?>">
-                        <i class="icon-slot"></i>
-                        <span><?=strtoupper(lang('Nav.slot'));?></span>
+                <li data-page="sport">
+                    <a href="<?=base_url('sport');?>">
+                        <i class="icon-ball"></i>
+                        <span><?=strtoupper(lang('Nav.sport'));?></span>
                     </a>
                     <div class="dropdown-content">
                         <div class="container clearfix">
-                            <div id="grid-slot-menu" class="slick-slider">
+                            <div id="grid-sport-menu" class="slick-slider">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li data-page="fishing">
+                    <a href="<?=base_url('fishing');?>">
+                        <i class="icon-fish-solid"></i>
+                        <span><?=strtoupper(lang('Nav.fishing'));?></span>
+                    </a>
+                    <div class="dropdown-content">
+                        <div class="container clearfix">
+                            <div id="grid-fishing-menu" class="slick-slider">
                             </div>
                         </div>
                     </div>

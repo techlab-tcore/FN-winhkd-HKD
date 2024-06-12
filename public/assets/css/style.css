@@ -511,22 +511,20 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 .hot-panel::-webkit-scrollbar{width:10px;height:10px;}
 .hot-panel::-webkit-scrollbar-thumb{background-color:var(--color-primary);border-radius:20px;}
 
-.hotgame {height:100px;
-    overflow:hidden;
-    border: 2px solid #FFC136;
-    background: linear-gradient(180deg, rgb(36, 0, 53, 0.9) 0%,rgba(59, 59, 58, 0.9) 100%);
-}
+.hotgame { height:auto;overflow:hidden;border: 2px solid #FFC136;background: linear-gradient(180deg, rgb(36, 0, 53, 0.9) 0%,rgba(59, 59, 58, 0.9) 100%);}
 
 @media (max-width:1600px){
 	.home-games-slick,.games-card{width:12rem;}
 	.games-card{padding:1rem .7rem; margin:calc(0.6rem + 4px) 0;}
 	.slick-slider .games-card{margin:0.3rem 0;}
 	.home-games .container{min-height:30rem;}
+	.hotgame { height:auto;}
 }
 @media (max-width:1400px){
 	.home-games .games-nav ul{width:15rem;}
 	.home-games .games-nav li{margin-top:1.5rem;font-size:1.25rem;}
 	.home-games-slick,.games-card{width:10rem;}
+	.hotgame { height:auto;}
 }
 @media (max-width:991.9px){
 	.banner-area .home-slider{order:1;}
@@ -536,9 +534,11 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 	.home-app p{font-size:0.875rem;margin:10px 0 1.875rem;}
 	.home-app .d-flex > *{max-width:none;flex:0 1 auto;}
 	.home-app .qrcode{padding:0.625rem;border-radius:0.625rem;margin-bottom:1.25rem;}
+	.hotgame { height:auto;}
 }
 @media (max-width:575.9px){
 	.home-app .d-flex > *{width:auto;flex:0 1 auto;max-width:50vw;}
+	.hotgame { height:110px;}
 }
 
 /*Forgot Password*/
@@ -590,7 +590,7 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 	.full-list > div p{margin-bottom:.5rem;}
 }
 @media (max-width:575.9px){
-	.full-list > div{;width:calc(33.33% - 1rem);}
+	.full-list > div{width:calc(33.33% - 1rem);}
 }
 
 /*Promo*/
