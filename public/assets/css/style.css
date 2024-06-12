@@ -462,6 +462,7 @@ footer{background:var(--color-secondary);margin-top:5rem;}
 .home-app .d-flex > *{width:15rem;max-width:15vw;}
 .home-app .qrcode{background:#202020;padding:1.125rem;box-shadow:3px 3px 8px #00000067;border-radius:20px;margin-bottom:1.25rem;}
 .home-app .qrcode img{width:100%;}
+.home-app #appQR canvas{width:100%;}
 
 /*h5*/
 .account-highlight{display:flex;font-size:0.688rem;margin:0.75rem auto;}
@@ -509,6 +510,12 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 .hot-panel .hot-list > div{width:111px;flex:0 0 auto;}
 .hot-panel::-webkit-scrollbar{width:10px;height:10px;}
 .hot-panel::-webkit-scrollbar-thumb{background-color:var(--color-primary);border-radius:20px;}
+
+.hotgame {height:100px;
+    overflow:hidden;
+    border: 2px solid #FFC136;
+    background: linear-gradient(180deg, rgb(36, 0, 53, 0.9) 0%,rgba(59, 59, 58, 0.9) 100%);
+}
 
 @media (max-width:1600px){
 	.home-games-slick,.games-card{width:12rem;}

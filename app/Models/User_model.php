@@ -4,23 +4,23 @@ use CodeIgniter\Model;
 
 class User_model extends Model
 {
-    protected $userRegister = 'https://transfer.winhkd.live/user/register';
-    protected $userLogin = 'https://transfer.winhkd.live/user/login';
-    protected $userLogout = 'https://transfer.winhkd.live/user/logout';
-    protected $userProfile = 'https://transfer.winhkd.live/user/getprofile';
-    protected $editUserPass = 'https://transfer.winhkd.live/user/updatepassword';
-    protected $editUser = 'https://transfer.winhkd.live/user/editprofile';
-    protected $editUserPassReset = 'https://transfer.winhkd.live/user/resetpassword';
+    protected $userRegister = 'http://10.148.0.8:38214/user/register';
+    protected $userLogin = 'http://10.148.0.8:38214/user/login';
+    protected $userLogout = 'http://10.148.0.8:38214/user/logout';
+    protected $userProfile = 'http://10.148.0.8:38214/user/getprofile';
+    protected $editUserPass = 'http://10.148.0.8:38214/user/updatepassword';
+    protected $editUser = 'http://10.148.0.8:38214/user/editprofile';
+    protected $editUserPassReset = 'http://10.148.0.8:38214/user/resetpassword';
 
-    protected $getProfileNoLogin = 'https://transfer.winhkd.live/user/getprofileby';
+    protected $getProfileNoLogin = 'http://10.148.0.8:38214/user/getprofileby';
 
-    protected $editUserVaultPin = 'https://transfer.winhkd.live/user/updatesafepassword';
-    protected $userUpline = 'https://transfer.winhkd.live/user/getuplinename';
-    protected $userUplineContact = 'https://transfer.winhkd.live/user/getuplinecontact';
+    protected $editUserVaultPin = 'http://10.148.0.8:38214/user/updatesafepassword';
+    protected $userUpline = 'http://10.148.0.8:38214/user/getuplinename';
+    protected $userUplineContact = 'http://10.148.0.8:38214/user/getuplinecontact';
 
-    protected $user2ndPass = 'https://transfer.winhkd.live/user/checksecurepassword';
-    private $compareUser2ndPass = 'https://transfer.winhkd.live/user/comparesecurepassword';
-    private $editUser2ndPass = 'https://transfer.winhkd.live/user/updatesecurepassword';
+    protected $user2ndPass = 'http://10.148.0.8:38214/user/checksecurepassword';
+    private $compareUser2ndPass = 'http://10.148.0.8:38214/user/comparesecurepassword';
+    private $editUser2ndPass = 'http://10.148.0.8:38214/user/updatesecurepassword';
 
     public function __construct()
 	{

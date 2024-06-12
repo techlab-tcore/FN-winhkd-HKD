@@ -4,12 +4,12 @@ use CodeIgniter\Model;
 
 class Balance_model extends Model
 {
-    protected $transactionHistory = 'https://transfer.winhkd.live/payment/getpaymenthistory2';
-    protected $addPayment = 'https://transfer.winhkd.live/payment/transfer';
-    protected $addBankSlip = 'https://transfer.winhkd.live/payment/uploadslip';
+    protected $transactionHistory = 'http://10.148.0.8:38214/payment/getpaymenthistory2';
+    protected $addPayment = 'http://10.148.0.8:38214/payment/transfer';
+    protected $addBankSlip = 'http://10.148.0.8:38214/payment/uploadslip';
 
-    protected $userTransfer = 'https://transfer.winhkd.live/playertransfer/transferbyloginid';
-    protected $userTransferHistory = 'https://transfer.winhkd.live/playertransfer/getplayertransferhistory';
+    protected $userTransfer = 'http://10.148.0.8:38214/playertransfer/transferbyloginid';
+    protected $userTransferHistory = 'http://10.148.0.8:38214/playertransfer/getplayertransferhistory';
 
     public function __construct()
 	{

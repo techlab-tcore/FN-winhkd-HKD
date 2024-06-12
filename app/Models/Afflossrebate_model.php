@@ -4,10 +4,10 @@ use CodeIgniter\Model;
 
 class Afflossrebate_model extends Model
 {
-    protected $affLossRebateList = 'https://transfer.winhkd.live/loserebate/getloserebatelist';
-    protected $affLossRebateHistory = 'https://transfer.winhkd.live/loserebate/getloserebateHistory';
+    protected $affLossRebateList = 'http://10.148.0.8:38214/loserebate/getloserebatelist';
+    protected $affLossRebateHistory = 'http://10.148.0.8:38214/loserebate/getloserebateHistory';
 
-    protected $affLossRebateSettlement = 'https://transfer.winhkd.live/loserebate/doloserebate';
+    protected $affLossRebateSettlement = 'http://10.148.0.8:38214/loserebate/doloserebate';
 
     public function __construct()
 	{

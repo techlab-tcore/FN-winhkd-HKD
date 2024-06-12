@@ -50,6 +50,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     $('.user-nav a[data-page=bankaccount]').addClass("cur");
+    $('.h5-tabbar a[data-page=account]').addClass("cur");
 
     if( '<?=$_SESSION['lang']?>' == 'my' ) {
         langs = malay;

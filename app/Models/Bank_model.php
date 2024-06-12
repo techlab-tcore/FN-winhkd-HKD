@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Bank_model extends Model
 {
-    protected $bankList = 'https://transfer.winhkd.live/bank/getlist';
+    protected $bankList = 'http://10.148.0.8:38214/bank/getlist';
 
     public function __construct()
 	{

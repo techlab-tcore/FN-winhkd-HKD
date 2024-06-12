@@ -137,6 +137,17 @@ return [
     'unlimitebonus' => '无限福利',
     'betrebate' => '每日投注福利',
     'caution' => '注意',
+    'transfer2' => '转账至',
+    'currentbalance' => '当前余额',
+    'entergame' => '进入游戏',
+    'transfer2game' => '转账至游戏',
+    
+    'banktransfer' => '银行转账 / FPS',
+    'norecord' => '暂无记录',
+    'depositamount' => '存款金额',
+    'withdrawalamount' => '提款金额',
+    'enteramount' => '输入金额',
+    'longtermpromo' => '长期有效',
 
     'turnoverwithdrawal' => '提款流水值',
 

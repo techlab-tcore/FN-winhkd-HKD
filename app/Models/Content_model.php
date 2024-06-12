@@ -4,8 +4,8 @@ use CodeIgniter\Model;
 
 class Content_model extends Model
 {
-    protected $contentList = 'https://transfer.winhkd.live/content/getlist';
-    protected $content = 'https://transfer.winhkd.live/content/get';
+    protected $contentList = 'http://10.148.0.8:38214/content/getlist';
+    protected $content = 'http://10.148.0.8:38214/content/get';
 
     public function __construct()
 	{

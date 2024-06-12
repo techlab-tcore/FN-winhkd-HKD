@@ -4,13 +4,13 @@ use CodeIgniter\Model;
 
 class Game_model extends Model
 {
-    protected $gameCreditLog = 'https://transfer.winhkd.live/game/getgametransferlist';
-    protected $gameLobby = 'https://transfer.winhkd.live/game/opengame';
-    protected $gameSlot = 'https://transfer.winhkd.live/game/slotopengame';
-    protected $gameBalance = 'https://transfer.winhkd.live/game/getgamebalance';
-    protected $editGameCredit = 'https://transfer.winhkd.live/game/transfergame';
+    protected $gameCreditLog = 'http://10.148.0.8:38214/game/getgametransferlist';
+    protected $gameLobby = 'http://10.148.0.8:38214/game/opengame';
+    protected $gameSlot = 'http://10.148.0.8:38214/game/slotopengame';
+    protected $gameBalance = 'http://10.148.0.8:38214/game/getgamebalance';
+    protected $editGameCredit = 'http://10.148.0.8:38214/game/transfergame';
 
-    protected $gameList = 'https://transfer.winhkd.live/game/getgamelist';
+    protected $gameList = 'http://10.148.0.8:38214/game/getgamelist';
 
     public function __construct()
 	{

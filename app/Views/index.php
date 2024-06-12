@@ -93,16 +93,18 @@
     <?php endif; ?>
     <div class="home-providers">
         <div id="providerSlick" class="providers-nav tabNav">
+            <!--
             <div>
                 <div class="providers-tab cur" target="#providersSlots">
                     <i class="icon-slot"></i>
-                    <span><?=strtoupper(lang('Nav.slot'));?></span>
+                    <span><?//=strtoupper(lang('Nav.slot'));?></span>
                 </div>
             </div>
+            -->
             <div>
-                <div class="providers-tab" target="#providersMultiple">
-                    <i class="icon-multiple"></i>
-                    <span><?=strtoupper(lang('Nav.multiplex'));?></span>
+                <div class="providers-tab cur" target="#providersMultiple">
+                    <i class="icon-slot"></i>
+                    <span><?=strtoupper(lang('Nav.slot'));?></span>
                 </div>
             </div>
             <div>
@@ -117,18 +119,26 @@
                     <span><?=strtoupper(lang('Nav.sport'));?></span>
                 </div>
             </div>
+            <div>
+                <div class="providers-tab" target="#providersFishing">
+                    <i class="icon-slot"></i>
+                    <span><?=strtoupper(lang('Nav.fishing'));?></span>
+                </div>
+            </div>
             <!-- <div>
                 <div class="providers-tab" target="#providersLottery">
                     <i class="icon-lottery"></i>
-                    <span><?=strtoupper(lang('Nav.lottery'));?></span>
+                    <span><?//=strtoupper(lang('Nav.lottery'));?></span>
                 </div>
             </div> -->
         </div>
+        <!--
         <div id="providersSlots" class="tabContent container">
             <div id="grid-slot" class="row row-cols-3">
             </div>
         </div>
-        <div id="providersMultiple" class="tabContent container" style="display:none">
+        -->
+        <div id="providersMultiple" class="tabContent container">
             <div class="providers-subnav tabNav">
                 <div class="container sub-nav">
                     <div target="#grid-1x" class="cur"><?=strtoupper(lang('Nav.arena1x'));?></div>
@@ -154,6 +164,10 @@
             <div id="grid-sport" class="game-list">
             </div>
         </div>
+        <div id="providersFishing" class="tabContent container" style="display:none">
+            <ul id="grid-fishing" class="row p-0 gx-1 game-list justify-content-center">
+            </ul>
+        </div>
         <!-- <div id="providersLottery" class="tabContent container" style="display:none">
             <div id="grid-lottery" class="game-list">
             </div>
@@ -168,7 +182,7 @@
         </div>
         <div class="app-content">
             <h1 class="text-nowrap justify-content-center"><?=lang('Nav.downloadapp');?></h1>
-            <div class="text-center mx-auto p-2 bg-light rounded-3 col-12 col-lg-6 col-md-6">
+            <div class="text-center mx-auto p-2 bg-light rounded-3 col-6 col-lg-6 col-md-6">
                 <!--<div class="qrcode">
                     <img src="../assets/img/qrcode.png" alt="QR Code">
                 </div>-->
@@ -199,6 +213,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
+    $('.h5-tabbar a[data-page=games]').addClass("cur");
 	$('.header-nav li[data-page=home]').addClass("cur");
 
     $(document).on('click','.gameSlick img',function(){
@@ -214,7 +229,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const objDevice = JSON.parse(dataDevice);
 
         if( objDevice.mobile==true ){
-            callingSlot();
+            callingSlotMultiX(1);
+            //callingSlot();
         } else {
             callingSport();
         }
@@ -249,12 +265,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         callingSport();
     });
 
-    const tabslotEvent = document.querySelector('div[target="#providersSlots"]');
-    tabslotEvent.addEventListener('click', function (event) {
-        event.target // newly activated tab
-        event.relatedTarget // previous active tab
-        callingSlot();
-    });
+    //const tabslotEvent = document.querySelector('div[target="#providersSlots"]');
+    //tabslotEvent.addEventListener('click', function (event) {
+    //    event.target // newly activated tab
+    //    event.relatedTarget // previous active tab
+    //    callingSlot();
+    //});
 
     const tabmultipleEvent = document.querySelector('div[target="#providersMultiple"]');
     tabmultipleEvent.addEventListener('click', function (event) {
@@ -289,6 +305,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         event.target // newly activated tab
         event.relatedTarget // previous active tab
         callingSlotMultiX(10);
+    });
+
+    const tabfishingEvent = document.querySelector('div[target="#providersFishing"]');
+    tabfishingEvent.addEventListener('click', function (event) {
+        event.target // newly activated tab
+        event.relatedTarget // previous active tab
+        callingFishing();
     });
 
 });

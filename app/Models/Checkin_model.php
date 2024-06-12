@@ -4,9 +4,9 @@ use CodeIgniter\Model;
 
 class Checkin_model extends Model
 {
-    protected $checkIn = 'https://transfer.winhkd.live/checkin/get';
-    protected $checkInList = 'https://transfer.winhkd.live/checkin/getlist';
-    protected $triggerCheckIn = 'https://transfer.winhkd.live/checkin/trigger';
+    protected $checkIn = 'http://10.148.0.8:38214/checkin/get';
+    protected $checkInList = 'http://10.148.0.8:38214/checkin/getlist';
+    protected $triggerCheckIn = 'http://10.148.0.8:38214/checkin/trigger';
 
     public function __construct()
 	{

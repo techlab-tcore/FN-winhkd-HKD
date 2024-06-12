@@ -4,8 +4,8 @@ use CodeIgniter\Model;
 
 class Gameprovider_model extends Model
 {
-    protected $gameProviderList = 'https://transfer.winhkd.live/gameprovider/getgameproviderlist';
-    protected $gameProviderAgentList = 'https://transfer.winhkd.live/gameprovider/getgameproviderlist2';
+    protected $gameProviderList = 'http://10.148.0.8:38214/gameprovider/getgameproviderlist';
+    protected $gameProviderAgentList = 'http://10.148.0.8:38214/gameprovider/getgameproviderlist2';
 
     public function __construct()
 	{

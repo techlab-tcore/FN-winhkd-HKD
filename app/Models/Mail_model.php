@@ -4,10 +4,10 @@ use CodeIgniter\Model;
 
 class Mail_model extends Model
 {
-    protected $mailList = 'https://transfer.winhkd.live/mailbox/getmailboxlist';
-    protected $mail = 'https://transfer.winhkd.live/mailbox/getmailbox';
-    protected $addMail = 'https://transfer.winhkd.live/mailbox/addmailbox';
-    protected $editMail = 'https://transfer.winhkd.live/mailbox/editmail';
+    protected $mailList = 'http://10.148.0.8:38214/mailbox/getmailboxlist';
+    protected $mail = 'http://10.148.0.8:38214/mailbox/getmailbox';
+    protected $addMail = 'http://10.148.0.8:38214/mailbox/addmailbox';
+    protected $editMail = 'http://10.148.0.8:38214/mailbox/editmail';
 
     public function __construct()
 	{

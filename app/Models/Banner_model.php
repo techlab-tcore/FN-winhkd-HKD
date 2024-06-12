@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Banner_model extends Model
 {
-    protected $bannerList = 'https://transfer.winhkd.live/banner/getbannerlist';
+    protected $bannerList = 'http://10.148.0.8:38214/banner/getbannerlist';
 
     public function __construct()
 	{

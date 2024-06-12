@@ -114,7 +114,7 @@ select:focus {
 .modal-promoBox .modal-body img,
 .modal-promoBox .modal-body table,
 .modal-tutorialBox .modal-body img,
-#qrcode img, #qrcode canvas {
+#qrcode img, #qrcode canvas, #appQR canvas {
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;

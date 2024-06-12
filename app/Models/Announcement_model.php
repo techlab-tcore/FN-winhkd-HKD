@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Announcement_model extends Model
 {
-    protected $anncList = 'https://transfer.winhkd.live/announcement/getannouncementlist';
+    protected $anncList = 'http://10.148.0.8:38214/announcement/getannouncementlist';
 
     public function __construct()
 	{

@@ -8,7 +8,7 @@
         <!-- End User Account -->
         <div class="user-form">
             <div class="form-flex">
-                <label class="form-label"><?=lang('Input.depoption');?><i>*</i></label>
+                <label class="form-label"><?=lang('Input.depotion');?><i>*</i></label>
                 <ul class="btn-selections btnSelections tabNav">
                     <li id="nav-instant-tab" target="#nav-instant" class="cur"><?=lang('Nav.instanttransfer');?></li>
                     <li id="nav-bank-tab" target="#nav-bank"><?=lang('Nav.banktransfer');?></li>
@@ -130,6 +130,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     $('.user-nav a[data-page=commission]').addClass("cur");
+    $('.h5-tabbar a[data-page=funds]').addClass("cur");
 
     getRadioPGatewayList('depositChannel-list');
     getCompanyCDM('bankOption-list');

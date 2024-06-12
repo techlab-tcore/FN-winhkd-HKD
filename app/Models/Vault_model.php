@@ -4,9 +4,9 @@ use CodeIgniter\Model;
 
 class Vault_model extends Model
 {
-    protected $vaultPin = 'https://transfer.winhkd.live/user/checksafepassword';
-    protected $editVaultPin = 'https://transfer.winhkd.live/user/updatesafepassword';
-    protected $editVaultBalance = 'https://transfer.winhkd.live/user/editsafebalance';
+    protected $vaultPin = 'http://10.148.0.8:38214/user/checksafepassword';
+    protected $editVaultPin = 'http://10.148.0.8:38214/user/updatesafepassword';
+    protected $editVaultBalance = 'http://10.148.0.8:38214/user/editsafebalance';
 
     public function __construct()
 	{

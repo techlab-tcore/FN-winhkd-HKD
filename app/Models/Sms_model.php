@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Sms_model extends Model
 {
-    protected $sms = 'https://transfer.winhkd.live/sms/sendsms';
+    protected $sms = 'http://10.148.0.8:38214/sms/sendsms';
 
     protected $whatsapp = 'https://verifyme.asia/api/create-message';
 

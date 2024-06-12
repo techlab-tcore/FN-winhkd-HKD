@@ -4,9 +4,9 @@ use CodeIgniter\Model;
 
 class Jackpot_model extends Model
 {
-    protected $jackpotDisplay = 'https://transfer.winhkd.live/jackpot/displayjackpot';
-    protected $getJackpot = 'https://transfer.winhkd.live/jackpot/triggerjackpot';
-    protected $countJackpot = 'https://transfer.winhkd.live/jackpot/countjackpot';
+    protected $jackpotDisplay = 'http://10.148.0.8:38214/jackpot/displayjackpot';
+    protected $getJackpot = 'http://10.148.0.8:38214/jackpot/triggerjackpot';
+    protected $countJackpot = 'http://10.148.0.8:38214/jackpot/countjackpot';
 
     public function __construct()
 	{

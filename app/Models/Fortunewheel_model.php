@@ -4,10 +4,10 @@ use CodeIgniter\Model;
 
 class Fortunewheel_model extends Model
 {
-    protected $fortuneWheelHistory = 'https://transfer.winhkd.live/spin/getspinhistory2';
-    protected $fortuneWheelTopList = 'https://transfer.winhkd.live/spin/gettopspinhistory2';
-    protected $fortuneWheel = 'https://transfer.winhkd.live/spin/getsettings';
-    protected $fortuneWheelTrigger = 'https://transfer.winhkd.live/spin/triggerspin';
+    protected $fortuneWheelHistory = 'http://10.148.0.8:38214/spin/getspinhistory2';
+    protected $fortuneWheelTopList = 'http://10.148.0.8:38214/spin/gettopspinhistory2';
+    protected $fortuneWheel = 'http://10.148.0.8:38214/spin/getsettings';
+    protected $fortuneWheelTrigger = 'http://10.148.0.8:38214/spin/triggerspin';
         
 
     public function __construct()

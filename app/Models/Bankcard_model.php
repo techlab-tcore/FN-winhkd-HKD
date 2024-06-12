@@ -4,9 +4,9 @@ use CodeIgniter\Model;
 
 class Bankcard_model extends Model
 {
-    protected $bankCardList = 'https://transfer.winhkd.live/bankcard/getlist';
-    protected $addBankCard = 'https://transfer.winhkd.live/bankcard/add';
-    protected $ediBankCard = 'https://transfer.winhkd.live/bankcard/edit';
+    protected $bankCardList = 'http://10.148.0.8:38214/bankcard/getlist';
+    protected $addBankCard = 'http://10.148.0.8:38214/bankcard/add';
+    protected $ediBankCard = 'http://10.148.0.8:38214/bankcard/edit';
 
     public function __construct()
 	{

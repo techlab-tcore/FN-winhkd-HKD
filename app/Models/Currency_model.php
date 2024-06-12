@@ -4,8 +4,8 @@ use CodeIgniter\Model;
 
 class Currency_model extends Model
 {
-    protected $currencyList = 'https://transfer.winhkd.live/currency/getcurrencylist';
-    protected $currency = 'https://transfer.winhkd.live/currency/getcurrency';
+    protected $currencyList = 'http://10.148.0.8:38214/currency/getcurrencylist';
+    protected $currency = 'http://10.148.0.8:38214/currency/getcurrency';
 
 
     public function __construct()

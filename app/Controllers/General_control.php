@@ -1168,11 +1168,11 @@ class General_control extends BaseController
 				$verify = substr($r['contentId'],0,3);
 				if( $verify=='PRO' && $r['status']==true ):
 					$promoReadOnly .= '<div class="promo-item">';
-					$promoReadOnly .= '<img class="promo-teaser-img" src="'.$p['thumbnail'][$lng].'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'">';
+					$promoReadOnly .= '<img class="promo-teaser-img" src="'.$r['thumbnail'][$lng].'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'">';
 					$promoReadOnly .= '<div class="promo-teaser">';
-					$promoReadOnly .= '<h3>'.$p['title'][$lng].'</h3>';
+					$promoReadOnly .= '<h3>'.$r['title'][$lng].'</h3>';
 					$promoReadOnly .= '<p class="d-lg-none">'.lang('Label.longtermpromo').'</p>';
-					$promoReadOnly .= '<a class="btn viewPromoBtn" href="javascript:void(0);" onclick="getPromoReadOnly(\''.base64_encode($p['promotionId']).'\');">'.strtoupper(lang('Nav.viewdetail')).'</a>';
+					$promoReadOnly .= '<a class="btn viewPromoBtn" href="javascript:void(0);" onclick="getPromoReadOnly(\''.base64_encode($r['id']).'\');">'.strtoupper(lang('Nav.viewdetail')).'</a>';
 					$promoReadOnly .= '</div>';
 					$promoReadOnly .= '</div>';
                 endif;

@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Livechat_model extends Model
 {
-    protected $liveChatList = 'https://transfer.winhkd.live/livechat/login';
+    protected $liveChatList = 'http://10.148.0.8:38214/livechat/login';
 
     public function __construct()
 	{

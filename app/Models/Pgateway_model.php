@@ -4,8 +4,8 @@ use CodeIgniter\Model;
 
 class Pgateway_model extends Model
 {
-    protected $pGatewayList = 'https://transfer.winhkd.live/paymentgateway/getlist';
-    protected $channelList = 'https://transfer.winhkd.live/paymentchannel/getlist';
+    protected $pGatewayList = 'http://10.148.0.8:38214/paymentgateway/getlist';
+    protected $channelList = 'http://10.148.0.8:38214/paymentchannel/getlist';
 
     public function __construct()
 	{

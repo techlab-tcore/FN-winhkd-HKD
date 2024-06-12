@@ -4,10 +4,10 @@ use CodeIgniter\Model;
 
 class Affiliate_model extends Model
 {
-    protected $affList = 'https://transfer.winhkd.live/affiliate/getaffiliatelist2';
-    protected $affHistory = 'https://transfer.winhkd.live/affiliate/getaffiliatehistory';
+    protected $affList = 'http://10.148.0.8:38214/affiliate/getaffiliatelist2';
+    protected $affHistory = 'http://10.148.0.8:38214/affiliate/getaffiliatehistory';
 
-    protected $affDownlineList = 'https://transfer.winhkd.live/user/getaffiliatedownlinelist';
+    protected $affDownlineList = 'http://10.148.0.8:38214/user/getaffiliatedownlinelist';
 
     public function __construct()
 	{

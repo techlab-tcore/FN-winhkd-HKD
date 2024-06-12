@@ -4,10 +4,10 @@ use CodeIgniter\Model;
 
 class Support_model extends Model
 {
-    protected $wsList = 'https://transfer.winhkd.live/cs/getlist';
-    protected $ws = 'https://transfer.winhkd.live/cs/get';
+    protected $wsList = 'http://10.148.0.8:38214/cs/getlist';
+    protected $ws = 'http://10.148.0.8:38214/cs/get';
 
-    protected $liveChat = 'https://transfer.winhkd.live/cs/getlivechaturl';
+    protected $liveChat = 'http://10.148.0.8:38214/cs/getlivechaturl';
 
     public function __construct()
 	{

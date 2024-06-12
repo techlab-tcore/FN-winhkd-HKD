@@ -4,13 +4,13 @@ use CodeIgniter\Model;
 
 class Promotion_model extends Model
 {
-    protected $diyPromoList = 'https://transfer.winhkd.live/playerpromotion/getlist';
-    protected $diyPromo = 'https://transfer.winhkd.live/playerpromotion/get';
-    protected $diyHistory = 'https://transfer.winhkd.live/playerpromotion/selfplayerpromotionhistory';
-    protected $editDiyPromo = 'https://transfer.winhkd.live/playerpromotion/recordplayerpromotion';
+    protected $diyPromoList = 'http://10.148.0.8:38214/playerpromotion/getlist';
+    protected $diyPromo = 'http://10.148.0.8:38214/playerpromotion/get';
+    protected $diyHistory = 'http://10.148.0.8:38214/playerpromotion/selfplayerpromotionhistory';
+    protected $editDiyPromo = 'http://10.148.0.8:38214/playerpromotion/recordplayerpromotion';
 
-    protected $promoList = 'https://transfer.winhkd.live/promotion/getlist';
-    protected $promo = 'https://transfer.winhkd.live/promotion/get';
+    protected $promoList = 'http://10.148.0.8:38214/promotion/getlist';
+    protected $promo = 'http://10.148.0.8:38214/promotion/get';
 
     public function __construct()
 	{
