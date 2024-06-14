@@ -9,10 +9,10 @@ return [
     'lottery' => '彩票遊戲',
     'promo' => '福利活動',
 
-    'arena2x' => '二倍場',
-    'arena5x' => '五倍場',
-    'arena10x' => '十倍場',
-    'arena20x' => '二十倍場',
+    'arena2x' => '2X',
+    'arena5x' => '5X',
+    'arena10x' => '10X',
+    'arena20x' => '20X',
 
     'download' => '下載',
     'livechat' => '客服',

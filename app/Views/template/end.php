@@ -122,21 +122,21 @@
                 <?=form_open('',['class'=>'form-validation','novalidate'=>'novalidate'],['provider'=>'','gname'=>'','species'=>'','platform'=>'']);?>
                 <div class="mb-3">
                     <div class="input-group">
-                        <div class="input-group-text btn btn-secondary"><i class="bx bxs-user"></i></div>
-                        <input type="text" class="form-control form-control-lg" name="gameuserid" id="gameuserid" readonly>
-                        <button type="button" class="btn btn-secondary" id="btn-copygid"><i class="bx bxs-copy-alt"></i></button>
+                        <div class="btn btn-secondary"><i class="icon-account"></i></div>
+                        <input type="text" class="form-control" name="gameuserid" id="gameuserid" readonly>
+                        <button type="button" class="btn btn-secondary" id="btn-copygid"><i class="icon-copy"></i></button>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="input-group">
-                        <div class="input-group-text btn btn-secondary"><i class="bx bxs-lock"></i></div>
-                        <input type="text" class="form-control form-control-lg" name="gameuserpass" id="gameuserpass" readonly>
-                        <button type="button" class="btn btn-secondary" id="btn-copygpass"><i class="bx bxs-copy-alt"></i></button>
+                        <div class="btn btn-secondary"><i class="icon-lock1"></i></div>
+                        <input type="text" class="form-control" name="gameuserpass" id="gameuserpass" readonly>
+                        <button type="button" class="btn btn-secondary" id="btn-copygpass"><i class="icon-copy"></i></button>
                     </div>
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-secondary btn-lg"><?=lang('Nav.playgame');?></button>
-                    <a target="_blank" class="text-decoration-none btn btn-link text-primary btn-download" href=""><?=lang('Nav.dwgameapp');?></a>
+                    <a target="_blank" class="text-decoration-none btn btn-light btn-download" href=""><?=lang('Nav.dwgameapp');?></a>
                 </div>
                 <?=form_close();?>
             </div>
@@ -432,7 +432,10 @@
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-3">
-                        <input type="radio" class="btn-check" name="sroom" id="sroom2" value="2X" autocomplete="off" checked><label class="btn btn-light w-100" for="sroom2">2X</label>
+                        <input type="radio" class="btn-check" name="sroom" id="sroom1" value="" autocomplete="off" checked><label class="btn btn-light w-100" for="sroom1">1X</label>
+                    </div>
+                    <div class="col-3">
+                        <input type="radio" class="btn-check" name="sroom" id="sroom2" value="2X" autocomplete="off"><label class="btn btn-light w-100" for="sroom2">2X</label>
                     </div>
                     <div class="col-3">
                         <input type="radio" class="btn-check" name="sroom" id="sroom5" value="5X" autocomplete="off"><label class="btn btn-light w-100" for="sroom5">5X</label>
@@ -440,9 +443,9 @@
                     <div class="col-3">
                         <input type="radio" class="btn-check" name="sroom" id="sroom10" value="10X" autocomplete="off"><label class="btn btn-light w-100" for="sroom10">10X</label>
                     </div>
-                    <div class="col-3">
+                    <!--<div class="col-3">
                         <input type="radio" class="btn-check" name="sroom" id="sroom20" value="20X" autocomplete="off"><label class="btn btn-light w-100" for="sroom20">20X</label>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="row gx-3">
                     <div class="col-12">
@@ -734,12 +737,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                         if( objDevice.mobile==true && checkJson==true ) {
                             if( objDevice.platform=='Android' ) {
-                                if( params['species']==3 ) 
-                                {
-                                    jokerApp(params['gameuserid'],params['gameuserpass']);
-                                } else {
-                                    station.Android!='' ? window.location = station.Android : '';
-                                }
+                                station.Android!='' ? window.location = station.Android : '';
                             } else if( objDevice.platform=='iOS' ) {
                                 station.IOS!='' ? window.open(station.IOS, '_blank') : '';
                             }
@@ -953,8 +951,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             //console.log(provider);
             //console.log(room);
-            let gameprovider;
-            if( typeof room!=='undefined' )
+            let gameprovider
+            /*if( typeof room!=='undefined' )
             {
                 let chr2 = provider.slice(-2);
                 let chr3 = provider.slice(-3);
@@ -968,6 +966,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 // const removeOriRoom = provider.slice(0,-2);
                 // gameprovider = removeOriRoom + room;
+            }
+            else {
+                gameprovider = $('.modal-singleGameTransferBox [name=provider]').val();
+            }*/
+
+            if( typeof room!=='undefined' ) {
+                gameprovider = provider + room;
             }
             else {
                 gameprovider = $('.modal-singleGameTransferBox [name=provider]').val();
@@ -1732,6 +1737,9 @@ $('.modal-gameTransferBox [name=room]').on('click', function(e) {
 //fishing
 $('.modal-singleGameTransferBox [name=sroom]').on('click', function(e) {
     let sroom = this.value;
+    if (sroom == "") { 
+        sroom = "1X";
+    }
     alert(sroom);
 });
 

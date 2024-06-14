@@ -5,10 +5,10 @@
             <div class="games-nav tabNav">
                 <h3><?=strtoupper(lang('Nav.slot'));?> <?=strtoupper(lang('Nav.games'));?></h3>
                 <ul>
-                    <li target="#slots1x" class="cur"><span><?=strtoupper(lang('Label.slot'));?> 1X</span></li>
-                    <li target="#slots2x"><span><?=strtoupper(lang('Label.slot'));?> 2X</span></li>
-                    <li target="#slots5x"><span><?=strtoupper(lang('Label.slot'));?> 5X</span></li>
-                    <li target="#slots10x"><span><?=strtoupper(lang('Label.slot'));?> 10X</span></li>
+                    <li target="#slots1x" class="cur"><span><?=strtoupper(lang('Nav.arena1x'));?></span></li>
+                    <li target="#slots2x"><span><?=strtoupper(lang('Nav.arena2x'));?></span></li>
+                    <li target="#slots5x"><span><?=strtoupper(lang('Nav.arena5x'));?></span></li>
+                    <li target="#slots10x"><span><?=strtoupper(lang('Nav.arena10x'));?></span></li>
                 </ul>
             </div>
         </div>

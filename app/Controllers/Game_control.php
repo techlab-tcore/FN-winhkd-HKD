@@ -827,8 +827,11 @@ class Game_control extends BaseController
                             // $game .= '<a class="d-block text-decoration-none" href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">';
 
                             // Instant Float Lobby
-                            $game .= '<a href="javascript:void(0);" onclick="gameTransferBox(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
-
+                            if( $s['code']!='EV8' && $s['code']!='EV82X' && $s['code']!='EV85X' && $s['code']!='EV810X' ):
+                                $game .= '<a href="javascript:void(0);" onclick="gameTransferBox(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
+                            else:
+                                $game .= '<a href="javascript:void(0);" onclick="appLanding(\'3\', \''.$s['name'].'\', \''.$s['code'].'\');">';
+                            endif;
                             $game .= '<img src="'.$_ENV['gameProviderCard'].'/'.$imgPath.'/slot/'.$multiple.'X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
                             //$game .= '<img class="d-block w-100" src="'.base_url('../assets/img/games/slot/'.$multiple.'x').'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'">';
                             $game .= '</a>';
@@ -844,22 +847,20 @@ class Game_control extends BaseController
                     endif;
 				else:
 					foreach( $s['type'] as $stype ):
-                        if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
-                            if( $stype['type']==$gameType && $s['status']==1 ):
-                                $game .= '<div>';
-                                $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                $game .= '<img src="'.$_ENV['gameProviderCard'].'/'.$imgPath.'/slot/'.$multiple.'X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
-                                //$game .= '<img class="d-block w-100" src="'.base_url('../assets/img/games/slot/'.$multiple.'x').'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'">';
-                                $game .= '</a>';
-                                $game .= '</div>';
-                            elseif( $stype['type']==$gameType && $s['status']==2 ):
-                                $game .= '<div class="maintenance">';
-                                $game .= '<a href="javascript:void(0)">';
-                                $game .= '<img src="'.$_ENV['gameProviderCard'].'/'.$imgPath.'/slot/'.$multiple.'X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
-                                //$game .= '<img class="d-block w-100" src="'.base_url('../assets/img/games/slot/'.$multiple.'x').'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'">';
-                                $game .= '</a>';
-                                $game .= '</div>';
-                            endif;
+                        if( $stype['type']==$gameType && $s['status']==1 ):
+                            $game .= '<div>';
+                            $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
+                            $game .= '<img src="'.$_ENV['gameProviderCard'].'/'.$imgPath.'/slot/'.$multiple.'X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                            //$game .= '<img class="d-block w-100" src="'.base_url('../assets/img/games/slot/'.$multiple.'x').'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'">';
+                            $game .= '</a>';
+                            $game .= '</div>';
+                        elseif( $stype['type']==$gameType && $s['status']==2 ):
+                            $game .= '<div class="maintenance">';
+                            $game .= '<a href="javascript:void(0)">';
+                            $game .= '<img src="'.$_ENV['gameProviderCard'].'/'.$imgPath.'/slot/'.$multiple.'X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                            //$game .= '<img class="d-block w-100" src="'.base_url('../assets/img/games/slot/'.$multiple.'x').'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'">';
+                            $game .= '</a>';
+                            $game .= '</div>';
                         endif;
 					endforeach;
 				endif;
@@ -878,8 +879,8 @@ class Game_control extends BaseController
 		$gameType = $this->request->getPost('params')['type'];
         $minigametype = $this->request->getPost('params')['minigametype'];
         $multiple = $this->request->getPost('params')['room'];
-        $count = strlen($multiple) + 1;
-        $substr = '-'.$count;
+        $count = strlen($multiple) + 1; //2
+        $substr = '-'.$count;//-2
 
         if( $data['session']==true ):
 			$provider = $this->reorderGameProviderAgentList(['type'=>$gameType]);
@@ -897,66 +898,70 @@ class Game_control extends BaseController
                 // Filter 2x
                 $room = $multiple.'X';
                 $roomCode = substr($s['code'], $substr);
+                $providercount = strlen($s['code']) - $count;
+
                 if( $roomCode==$room ):
 
-				if( $data['session']==true ):
-                    if( $s['category']==$gameType && $s['status']==1 ):
-                        $payload = [
-                            'gameprovidercode' => $s['code']
-                        ];
-                
-                        $res = $this->game_model->selectAllGames($payload);
-                        $keys = array_column($res['data'], 'order');
-                        array_multisort($keys, SORT_ASC, $res['data']);
+                    $providercode = substr($s['code'], 0, $providercount);
 
-                        if( $res['code']==1 && $res['data']!=[] ):
-                            foreach( $res['data'] as $g ):
-                                if( $g['status']==1 && $g['type']==$minigametype ):
-                                    $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 d-flex rounded-4">';
-                                    $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="singleGameTransferBox(\'2\', \''.$g['name'][$lng].'\', \''.$s['code'].'\',\''.$g['code'].'\',\''.$s['name'].'\');">';
-                                    $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
-                                    $game .= '</a>';
-                                    $game .= '</li>';
-                                elseif( $g['status']==2 && $g['type']==$minigametype ):
-                                    $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 maintenance d-flex rounded-4">';
-                                    $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
-                                    $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
-                                    $game .= '</a>';
-                                    $game .= '</li>';
-                                endif;
-                            endforeach;
-                        endif;
-                    endif;
-                else:
-                    foreach( $s['type'] as $stype ):
-                        if( $stype['type']==$gameType && $s['status']==1 ):
+                    if( $data['session']==true ):
+                        if( $s['category']==$gameType && $s['status']==1 ):
                             $payload = [
-                                'gameprovidercode' => $s['code']
+                                'gameprovidercode' => $providercode
                             ];
                     
                             $res = $this->game_model->selectAllGames($payload);
                             $keys = array_column($res['data'], 'order');
                             array_multisort($keys, SORT_ASC, $res['data']);
+
                             if( $res['code']==1 && $res['data']!=[] ):
                                 foreach( $res['data'] as $g ):
                                     if( $g['status']==1 && $g['type']==$minigametype ):
                                         $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 d-flex rounded-4">';
-                                        $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                        $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="singleGameTransferBox(\'2\', \''.$g['name'][$lng].'\', \''.$providercode.'\',\''.$g['code'].'\',\''.$s['name'].'\');">';
+                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$providercode.'/'.$g['code'].'.png">';
                                         $game .= '</a>';
                                         $game .= '</li>';
                                     elseif( $g['status']==2 && $g['type']==$minigametype ):
                                         $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 maintenance d-flex rounded-4">';
                                         $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
-                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$s['code'].'/'.$g['code'].'.png">';
+                                        $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$providercode.'/'.$g['code'].'.png">';
                                         $game .= '</a>';
                                         $game .= '</li>';
                                     endif;
                                 endforeach;
                             endif;
                         endif;
-                    endforeach;
-                endif;
+                    else:
+                        foreach( $s['type'] as $stype ):
+                            if( $stype['type']==$gameType && $s['status']==1 ):
+                                $payload = [
+                                    'gameprovidercode' => $providercode
+                                ];
+                        
+                                $res = $this->game_model->selectAllGames($payload);
+                                $keys = array_column($res['data'], 'order');
+                                array_multisort($keys, SORT_ASC, $res['data']);
+                                if( $res['code']==1 && $res['data']!=[] ):
+                                    foreach( $res['data'] as $g ):
+                                        if( $g['status']==1 && $g['type']==$minigametype ):
+                                            $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 d-flex rounded-4">';
+                                            $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
+                                            $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$providercode.'/'.$g['code'].'.png">';
+                                            $game .= '</a>';
+                                            $game .= '</li>';
+                                        elseif( $g['status']==2 && $g['type']==$minigametype ):
+                                            $game .= '<li class="col-xl-2 col-lg-2 col-md-2 col-4 maintenance d-flex rounded-4">';
+                                            $game .= '<a class="d-block w-100 text-decoration-none hotgame rounded-4 my-auto overflow-hidden" href="javascript:void(0);">';
+                                            $game .= '<img class="w-100 h-auto rounded-4" src="'.$_ENV['gamecard'].'/'.$providercode.'/'.$g['code'].'.png">';
+                                            $game .= '</a>';
+                                            $game .= '</li>';
+                                        endif;
+                                    endforeach;
+                                endif;
+                            endif;
+                        endforeach;
+                    endif;
                 endif;
             endforeach;
         endif;
@@ -1080,98 +1085,109 @@ class Game_control extends BaseController
 			foreach( $provider['data'] as $s ):
                 if (!strpos($s['code'], '2X') && !strpos($s['code'], '5X') && !strpos($s['code'], '10X') && !strpos($s['code'], '20X')):
                     if( $data['session']==true ):
-                        if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
-                            if( $s['category']==$gameType && $s['status']==1 ):
-                                if( $platform['mobile']==true ):
-                                    $game .= '<div>';
+                        if( $s['category']==$gameType && $s['status']==1 ):
+                            if( $platform['mobile']==true ):
+                                $game .= '<div>';
+                                //App game Filter
+                                if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
                                     $game .= '<a href="javascript:void(0);" onclick="gameLandingExpress(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
-                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
-                                    $game .= '</a>';
-                                    $game .= '</div>';
                                 else:
-                                    if( $isLobby==1 ):
-                                        $game .= '<div>';
-                                        $game .= '<a href="javascript:void(0);" onclick="gameLandingExpress(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
-                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
-                                        $game .= '</a>';
-                                        $game .= '</div>';
-                                    else:
-                                        $game .= '<div class="games-card">';
-                                        $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy" cat="slot">';
-                                        $game .= '</div>';
-                                    endif;
+                                    $game .= '<a href="javascript:void(0);" onclick="appLanding(\'3\', \''.$s['name'].'\', \''.$s['code'].'\');">';
                                 endif;
-                                // Original
-                                // $game .= '<a class="d-block text-decoration-none" href="javascript:void(0);" onclick="gameLanding(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
-
-                                // Instant Lobby
-                                // $game .= '<a class="d-block text-decoration-none" href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">';
-
-                                // Instant Float Lobby
-                            elseif( $s['category']==$gameType && $s['status']==2 ):
-                                if( $platform['mobile']==true ):
-                                    $game .= '<div class="maintenance">';
-                                    $game .= '<a href="javascript:void(0)">';
-                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
+                                $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
+                                $game .= '</a>';
+                                $game .= '</div>';
+                            else:
+                                if( $isLobby==1 ):
+                                    $game .= '<div>';
+                                    //App game Filter
+                                    if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
+                                        $game .= '<a href="javascript:void(0);" onclick="gameLandingExpress(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
+                                    else:
+                                        $game .= '<a href="javascript:void(0);" onclick="appLanding(\'3\', \''.$s['name'].'\', \''.$s['code'].'\');">';
+                                    endif;
+                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
                                     $game .= '</a>';
                                     $game .= '</div>';
                                 else:
-                                    if( $isLobby==1 ):
-                                        $game .= '<div class="maintenance">';
+                                    $game .= '<div class="games-card">';
+                                    $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy" cat="slot">';
+                                    $game .= '</div>';
+                                endif;
+                            endif;
+                            // Original
+                            // $game .= '<a class="d-block text-decoration-none" href="javascript:void(0);" onclick="gameLanding(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
+
+                            // Instant Lobby
+                            // $game .= '<a class="d-block text-decoration-none" href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">';
+
+                            // Instant Float Lobby
+                        elseif( $s['category']==$gameType && $s['status']==2 ):
+                            if( $platform['mobile']==true ):
+                                $game .= '<div class="maintenance">';
+                                $game .= '<a href="javascript:void(0)">';
+                                $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
+                                $game .= '</a>';
+                                $game .= '</div>';
+                            else:
+                                if( $isLobby==1 ):
+                                    $game .= '<div class="maintenance">';
+                                    //App game Filter
+                                    if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
                                         $game .= '<a href="javascript:void(0);" onclick="gameLandingExpress(\'2\', \''.$s['name'].'\', \''.$s['code'].'\');">';
-                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
-                                        $game .= '</a>';
-                                        $game .= '</div>';
                                     else:
-                                        $game .= '<div class="games-card maintenance">';
-                                        $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy" cat="slot">';
-                                        $game .= '</div>';
+                                        $game .= '<a href="javascript:void(0);" onclick="appLanding(\'3\', \''.$s['name'].'\', \''.$s['code'].'\');">';
                                     endif;
+                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy">';
+                                    $game .= '</a>';
+                                    $game .= '</div>';
+                                else:
+                                    $game .= '<div class="games-card maintenance">';
+                                    $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy" cat="slot">';
+                                    $game .= '</div>';
                                 endif;
                             endif;
                         endif;
                     else:
                         foreach( $s['type'] as $stype ):
-                            if( $s['code']!='MG8' && $s['code']!='PU8' && $s['code']!='PB' && $s['code']!='EV8' && $s['code']!='K9' && $s['code']!='GW' && $s['code']!='CSC' && $s['code']!='K9K' ):
-                                if( $stype['type']==$gameType && $s['status']==1 ):
-                                    if( $platform['mobile']==true ):
+                            if( $stype['type']==$gameType && $s['status']==1 ):
+                                if( $platform['mobile']==true ):
+                                    $game .= '<div>';
+                                    $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
+                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                                    $game .= '</a>';
+                                    $game .= '</div>';
+                                else:
+                                    if( $isLobby==1 ):
                                         $game .= '<div>';
                                         $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
                                         $game .= '</a>';
                                         $game .= '</div>';
                                     else:
-                                        if( $isLobby==1 ):
-                                            $game .= '<div>';
-                                            $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                            $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
-                                            $game .= '</a>';
-                                            $game .= '</div>';
-                                        else:
-                                            $game .= '<div class="games-card">';
-                                            $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy" cat="slot">';
-                                            $game .= '</div>';
-                                        endif;
+                                        $game .= '<div class="games-card">';
+                                        $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy" cat="slot">';
+                                        $game .= '</div>';
                                     endif;
-                                elseif( $stype['type']==$gameType && $s['status']==2 ):
-                                    if( $platform['mobile']==true ):
+                                endif;
+                            elseif( $stype['type']==$gameType && $s['status']==2 ):
+                                if( $platform['mobile']==true ):
+                                    $game .= '<div class="maintenance">';
+                                    $game .= '<a href="javascript:void(0)">';
+                                    $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                                    $game .= '</a>';
+                                    $game .= '</div>';
+                                else:
+                                    if( $isLobby==1 ):
                                         $game .= '<div class="maintenance">';
-                                        $game .= '<a href="javascript:void(0)">';
-                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/mobile/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
+                                        $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
+                                        $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
                                         $game .= '</a>';
                                         $game .= '</div>';
                                     else:
-                                        if( $isLobby==1 ):
-                                            $game .= '<div class="maintenance">';
-                                            $game .= '<a href="javascript:void(0);" onclick="alertToast(\'text-bg-dark\', \''.lang('Validation.loginaccount').'\');">';
-                                            $game .= '<img src="'.$_ENV['gameProviderCard'].'/desktop/slot/1X/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy">';
-                                            $game .= '</a>';
-                                            $game .= '</div>';
-                                        else:
-                                            $game .= '<div class="games-card maintenance">';
-                                            $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy" cat="slot">';
-                                            $game .= '</div>';
-                                        endif;
+                                        $game .= '<div class="games-card maintenance">';
+                                        $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'][$lng].'" alt="'.$s['name'][$lng].'" loading="lazy" cat="slot">';
+                                        $game .= '</div>';
                                     endif;
                                 endif;
                             endif;
