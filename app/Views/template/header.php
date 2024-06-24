@@ -1,6 +1,6 @@
 <header>
     <div class="d-h5-none">
-        <div class="header-top">
+        <div class="header-top fixed-top">
             <div class="container-full">
                 <div class="header-time"><span id="timeShow"></span></div>
                 <?php if( !isset($_SESSION['logged_in']) ): ?>
@@ -204,8 +204,13 @@
 </div>
 <div class="h5-tabbar d-lg-none">
     <a data-page="games" href="<?=base_url('');?>"><i class="icon-games"></i><span><?=lang('Nav.games');?></span></a>
-    <a data-page="funds" href="<?=base_url('deposit');?>"><i class="icon-funds"></i><span><?=lang('Nav.fund');?></span></a>
-    <a data-page="account" href="<?=base_url('user/bank-account');?>"><i class="icon-account"></i><span><?=lang('Nav.account');?></span></a>
+    <?php if( isset($_SESSION['logged_in']) ): ?>
+        <a data-page="funds" href="<?=base_url('deposit');?>"><i class="icon-funds"></i><span><?=lang('Nav.fund');?></span></a>
+        <a data-page="account" href="<?=base_url('user/bank-account');?>"><i class="icon-account"></i><span><?=lang('Nav.account');?></span></a>
+    <?php else: ?>
+        <a data-page="funds" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="icon-funds"></i><span><?=lang('Nav.fund');?></span></a>
+        <a data-page="account" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="icon-account"></i><span><?=lang('Nav.account');?></span></a>
+    <?php endif; ?>
     <a data-page="promo" href="<?=base_url('promotions');?>"><i class="icon-promo"></i><span><?=lang('Nav.promo');?></span></a>
     <a data-page="livechat" onclick="LC_API.open_chat_window();return false;"><i class="icon-livechat"></i><span><?=lang('Nav.livechat');?></span></a>
 </div>	

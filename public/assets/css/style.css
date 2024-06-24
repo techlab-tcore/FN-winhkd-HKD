@@ -28,6 +28,7 @@
 html{font-size:16px;}
 body{background:#000000;font-family: 'roboto', Helvetica, sans-serif;font-size:1rem;line-height:1.333;color:#fff;margin:0;padding:0;overflow-x:hidden;}
 body.off-scroll{overflow:hidden;}
+#pMain{margin-top: 50px;}
 img{max-width:100%;}
 a{color:#fff;transition:color .3s; text-decoration:none;}
 a:hover{color:var(--color-primary);}
@@ -60,11 +61,13 @@ li{padding-left:.5rem;}
 	}
 	html{font-size:16px;}
 	h1{font-size:1.5rem;}
+	#pMain{margin-top: 0px;}
 }
 @media (max-width:575.9px){
 	:root{
 		--container-gap:0.375rem;
 	}
+	#pMain{margin-top: 0px;}
 }
 
 /**icomoon**/
@@ -319,7 +322,7 @@ header{position:relative;z-index:10;}
 .quicklink-dropdown a{display:block;margin-bottom:5px;line-height:2.375rem;padding:0 5px;}
 .quicklink-dropdown a:hover,.quicklink-dropdown a.cur{color:var(--color-primary);}
 
-.header-sticky{position:sticky;top:-1px;z-index:9;background:#000000;}
+.header-sticky{position:sticky;top:45px;z-index:9;background:#000000;}
 .header-sticky > .container-full{display:flex;align-items:center;height:5.75rem;}
 .header-sticky .logo,.header-sticky .flex-right{width:190px;max-width:13%;flex:0 0 auto;}
 .header-sticky nav{margin:0 1.5rem;}

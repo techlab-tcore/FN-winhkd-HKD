@@ -184,26 +184,28 @@ class General_control extends BaseController
 	{
 		// if( session()->get('logged_in') ): return redirect()->to(base_url('lobby')); endif;
 		$data['session'] = session()->get('logged_in') ? true : false;
-
 		$lng = strtoupper($_SESSION['lang']);
 
 		// Banner
 		$resBanner = $this->banner_model->selectAllBanners([]);
+
+		$bannerNum = 0;
 		$banner = '';
 		if( $resBanner['code']==1 && $resBanner['data']!=[] ):
 			foreach( $resBanner['data'] as $indexBanner=>$bn ):
-				if( $indexBanner>0 ):
-					if( $bn['status'] == 1 ):
-						$banner .= '<a href="javascript:void(0);"><img class="d-block w-100" src="'.$bn['imageUrl'][$lng].'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'"></a>';
-					endif;
-				else:
-					//$banner .= '<a class="swiper-slide home-banner p-2 pt-0" href="javascript:void(0);"><img class="d-block w-100 rounded-4" src="'.base_url('../assets/img/banner/defaultBanner.png').'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'"></a>';
-					$banner .= '';
+				if( $bn['status'] == 1 ):
+					$banner .= '<a href="javascript:void(0);"><img class="d-block w-100" src="'.$bn['imageUrl'][$lng].'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'"></a>';
+					$bannerNum++;
 				endif;
 			endforeach;
+
+			if($bannerNum < 1):
+				$banner .= '<a href="javascript:void(0);"><img class="d-block w-100" src="'.base_url('../assets/img/banner/defaultBanner.png').'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'"></a>';
+			endif;
 		else:
 			$banner .= '<a href="javascript:void(0);"><img class="d-block w-100" src="'.base_url('../assets/img/banner/defaultBanner.png').'" alt="'.$_ENV['company'].'" title="'.$_ENV['company'].'"></a>';
 		endif;
+
 		$data['banner'] = $banner;
 		
 		echo view('template/start');

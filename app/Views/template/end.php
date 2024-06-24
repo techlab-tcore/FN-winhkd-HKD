@@ -320,17 +320,14 @@
                     </div>
                 </div>
                 <div class="row gx-3 mb-3">
-                    <div class="col-3">
+                    <div class="col-4">
                         <input type="radio" class="btn-check" name="room" id="room2" value="2X" autocomplete="off"><label class="btn btn-light w-100" for="room2">2X</label>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <input type="radio" class="btn-check" name="room" id="room5" value="5X" autocomplete="off"><label class="btn btn-light w-100" for="room5">5X</label>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <input type="radio" class="btn-check" name="room" id="room10" value="10X" autocomplete="off"><label class="btn btn-light w-100" for="room10">10X</label>
-                    </div>
-                    <div class="col-3">
-                        <input type="radio" class="btn-check" name="room" id="room20" value="20X" autocomplete="off"><label class="btn btn-light w-100" for="room20">20X</label>
                     </div>
                 </div>
                 <div class="row gx-3">
@@ -3468,6 +3465,7 @@ function getCompanyCDM(element) {
                 node.setAttribute("data-remark", item.remark);
                 node.setAttribute("data-mindep", item.minDeposit);
                 node.setAttribute("data-maxdep", item.maxDeposit);
+                node.setAttribute("data-qrimg", item.qrCodeUrl);
                 node.appendChild(textnode);
                 document.getElementById(element).appendChild(node);
             });

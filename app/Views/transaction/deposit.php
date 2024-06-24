@@ -77,6 +77,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mb-3">
+                            <label class="col-xl-4 col-lg-4 col-md-4 col-12 col-form-label color-55vp3"><?=lang('Input.bankqr');?><span class="text-danger">*</span></label>
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-12">
+                                <img id="bankQr" class="d-inline-block w-50" src="">
+                            </div>
+                        </div>
                     <div class="form-flex">
                         <label class="form-label"><?=lang('Label.depositamount');?><i>*</i></label>
                         <input type="number" step="any" class="form-control" name="amount" required>
@@ -180,8 +186,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const remark = this.options[idx].dataset.remark;
         const minDep = this.options[idx].dataset.mindep;
         const maxDep = this.options[idx].dataset.maxdep;
+        const bankQr = this.options[idx].dataset.qrimg;
 
-        $('.bankTransferForm [name=currency]').val(currency);
+        //$('.bankTransferForm [name=currency]').val(currency);
         $('.bankTransferForm [name=accholder]').val(holder);
         $('.bankTransferForm [name=accno]').val(accno);
         $('.bankTransferForm [name=card]').val(card);
@@ -194,6 +201,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         $('.bankTransferForm [name=amount]').attr('placeholder', "Min: "+minDep+" / "+"Max: "+maxDep);
         $('.bankMinDeposit').html(minDep);
         $('.bankMaxDeposit').html(maxDep);
+        $("#bankQr").attr("src", bankQr);
     });
 
     $('#depositChannel-list').off().on('change', function(e) {
@@ -218,7 +226,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     const tabInstantEvent = document.querySelector('[target="#nav-instant"]');
-    tabInstantEvent.addEventListener('hidden.bs.tab', function (event) {
+    tabInstantEvent.addEventListener('click', function (event) {
         $('#nav-instant').find('form').trigger('reset');
         $('#nav-instant #promo-list').html(' ');
     });
@@ -229,7 +237,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     const tabBankEvent = document.querySelector('[target="#nav-bank"]');
-    tabBankEvent.addEventListener('hidden.bs.tab', function (event) {
+    tabBankEvent.addEventListener('click', function (event) {
         $('#nav-bank').find('form').trigger('reset');
         $('#nav-bank #bankPromo-list').html(' ');
     });

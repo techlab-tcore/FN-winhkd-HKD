@@ -210,6 +210,7 @@ class Bankcard_control extends BaseController
         $data = [];
         if( $res['code']==1 && $res['data']!=[] ):
             foreach($res['data'] as $bc):
+                $code = '';
                 // Get Currency Code
                 foreach( $currency['data'] as $cd ):
                 	if( $cd['bankId']==$bc['bankId'] ):
@@ -232,6 +233,7 @@ class Bankcard_control extends BaseController
                 $row['maxWithdrawal'] = $bc['maxWithdrawal'];
                 $row['maxDailyDeposit'] = $bc['maxDailyDeposit'];
                 $row['maxDailyWithdrawal'] = $bc['maxDailyWithdrawal'];
+                $row['qrCodeUrl'] = $bc['qrCodeUrl'];
                 $data[] = $row;
             endforeach;
             echo json_encode(['data'=>$data, 'code'=>$res['code'], 'message'=>$res['message']]);

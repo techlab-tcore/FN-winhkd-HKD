@@ -177,16 +177,16 @@
 
 <div class="home-app">
     <div class="container">
-        <div class="d-h5-none">
+        <div class="d-h5-none col-6">
             <img src="../assets/img/home/download_app.png" alt="Download App" loading="lazy">
         </div>
         <div class="app-content">
             <h1 class="text-nowrap justify-content-center"><?=lang('Nav.downloadapp');?></h1>
-            <div class="text-center mx-auto p-2 bg-light rounded-3 col-6 col-lg-6 col-md-6">
-                <!--<div class="qrcode">
+            <div class="text-center mx-auto p-0 rounded-3 col-6 col-lg-6 col-md-3">
+                <div class="qrcode">
                     <img src="../assets/img/qrcode.png" alt="QR Code">
-                </div>-->
-                <figure id="appQR" class="p-0 m-0"></figure>
+                </div>
+                <!--<figure id="appQR" class="p-0 m-0"></figure>-->
                 <!--<a href="">
                     <img src="../assets/img/home/btn_googleplay.png" alt="Google Play">
                 </a>-->
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     //Download app QR
-    downloadAppQR();
+    //downloadAppQR();
     
 	if( logged ) {
         announcementPopList();

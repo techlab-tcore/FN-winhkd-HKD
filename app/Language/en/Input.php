@@ -50,4 +50,5 @@ return [
     'atm' => 'ATM/CDM',
     'depotion' => 'Deposit Option',
     'depchannel' => 'Deposit Channel',
+    'bankqr' => 'Bank QR',
 ];

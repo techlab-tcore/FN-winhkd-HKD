@@ -50,4 +50,5 @@ return [
     'atm' => '銀行轉帳',
     'depotion' => '存款選項',
     'depchannel' => '存款通道',
+    'bankqr' => '銀行二維碼',
 ];

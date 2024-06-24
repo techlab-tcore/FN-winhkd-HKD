@@ -50,4 +50,5 @@ return [
     'atm' => '银行转账',
     'depotion' => '存款选项',
     'depchannel' => '存款通道',
+    'bankqr' => '银行二维码',
 ];
