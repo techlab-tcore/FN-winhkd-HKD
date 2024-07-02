@@ -192,7 +192,8 @@
     <a href="<?=base_url('transaction/history');?>"><?=strtoupper(lang('Nav.history'));?></a>
     <a href="<?=base_url('user-commission');?>"><?=strtoupper(lang('Nav.commlist'));?></a>
     <a href="<?=base_url('user-password');?>"><?=strtoupper(lang('Nav.password'));?></a>
-    <a class="border-bottom" href="<?=base_url('user/bank-account');?>"><?=strtoupper(lang('Nav.bankacc'));?></a>
+    <a href="<?=base_url('user/bank-account');?>"><?=strtoupper(lang('Nav.bankacc'));?></a>
+    <a class="border-bottom" href="<?=base_url('message');?>"><?=strtoupper(lang('Nav.message'));?></a>
     <?php endif; ?>
     <a href="<?=base_url('sport');?>"><?=strtoupper(lang('Nav.sport'));?></a>
     <a href="<?=base_url('casino');?>"><?=strtoupper(lang('Nav.casino'));?></a>

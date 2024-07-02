@@ -148,7 +148,9 @@ class General_control extends BaseController
 		$data['affiliate'] = $affiliate;
 
 		echo view('template/start');
+		echo view('template/header');
         echo view('sms-affiliate-register', $data);
+		echo view('template/footer');
 		echo view('template/end', $data);
 	}
 

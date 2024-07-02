@@ -65,7 +65,7 @@ class Sms_control extends BaseController
         $str_result = '0123456789';
         $veritac = substr(str_shuffle($str_result), 0, $length_of_string);
 
-        $msg = '[W8]--'.$veritac.'--';
+        $msg = '[WHKD]--'.$veritac.'--';
         $msg .= 'Code to be used once for login security verification. Do not share Code with others. Disregard this SMS if you did not intend to log in.';
 
         // Checking Mobile Number

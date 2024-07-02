@@ -6,6 +6,21 @@
         <!-- User Account -->
         <?=view('useraccount');?>
         <!-- End User Account -->
+        <div class="d-lg-none" style="background-color: #000;">
+            <div class="account-bankcard container">
+                <div style="border-right: 1px solid #686D76"><a href="<?=base_url('deposit');?>"><i class="icon-deposit"></i><?=strtoupper(lang('Nav.deposit'));?></a></div>
+                <div style="border-right: 1px solid #686D76"><a href="<?=base_url('withdrawal');?>"><i class="icon-withdraw"></i><?=strtoupper(lang('Nav.withdrawal'));?></a></div>
+                <div><a href="<?=base_url('transaction/history');?>"><i class="icon-history"></i><?=strtoupper(lang('Nav.history'));?></a></div>
+            </div>
+            <div class="url-wrap">
+                <?php if( isset($_SESSION['logged_in']) ): ?>
+                <a class="border-bottom" href="<?=base_url('transaction/history');?>"><?=strtoupper(lang('Nav.history'));?></a>
+                <a class="border-bottom" href="<?=base_url('user-commission');?>"><?=strtoupper(lang('Nav.commlist'));?></a>
+                <a class="border-bottom" href="<?=base_url('user-password');?>"><?=strtoupper(lang('Nav.password'));?></a>
+                <a href="<?=base_url('user/logout');?>"><?=strtoupper(lang('Nav.logout'));?></a>
+                <?php endif; ?>
+            </div>
+        </div>
 			<div class="user-margin">
 				<div class="table-wrap">
 					<table id="bcTable" class="table table-history w-100" style="min-width:600px">

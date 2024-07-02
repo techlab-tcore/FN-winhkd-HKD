@@ -344,6 +344,11 @@ header{position:relative;z-index:10;}
 .offcanvas-wrap a{display:flex;align-items:center;min-height:48px;padding:10px 0;}
 .offcanvas-wrap a.cur{color:var(--color-primary)}
 
+.url-wrap{background:#212121;top:50px;width:100%;bottom:0;left:-110%;padding:0 30px 10px;transition:left .4s;overflow-x:auto;font-size:14px;z-index:9999;}
+.url-wrap.active{left:0;}
+.url-wrap a{display:flex;align-items:center;min-height:48px;padding:10px 0;}
+.url-wrap a.cur{color:var(--color-primary)}
+
 .h5-tabbar{display:flex;background:#252525;position:fixed;left:0;right:0;bottom:0;height:var(--tabbar-height);color:#fff;z-index:98;border-radius: 20px 20px 0px 0px;}
 .h5-tabbar a{display:flex;align-items:center;flex-direction:column;flex:1 1 0;font-size:0.75rem;justify-content:center;}
 .h5-tabbar a.cur span{color:var(--color-primary);}
@@ -474,6 +479,10 @@ footer{background:var(--color-secondary);margin-top:5rem;}
 .account-highlight p{font-size:0.875rem;display:flex;align-items:center;margin:5px 0;}
 .account-highlight i:not(.icon-refresh){font-size:1.5rem;display:block;margin:5px auto;}
 .account-highlight .icon-refresh{margin-left:2rem;}
+.account-bankcard{display:flex;font-size:0.688rem;padding-bottom:20px;background-color:#212121}
+.account-bankcard div{text-align:center;padding:3px 0.75rem;flex:1 1 auto;max-width:150px;}
+.account-bankcard p{font-size:0.875rem;display:flex;align-items:center;margin:5px 0;}
+.account-bankcard i:not(.icon-refresh){font-size:1.5rem;display:block;margin:5px auto;}
 .home-providers{margin-bottom:2.563rem;}
 .providers-nav{background:var(--color-secondary);border-radius:10px;padding:0 5vw;margin:0.3rem 0 0.625rem;}
 .providers-nav .slick-arrow{left:0;box-shadow:inset 0px 0px 3px #FFF7D8, 0px 1px 3px #00000033;border-radius:10px 0px 0px 10px;background:var(--color-gradient);width:5vw;font-size:12px;top:0;bottom:0;margin:0;}

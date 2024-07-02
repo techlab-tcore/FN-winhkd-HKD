@@ -33,7 +33,7 @@
                 <input class="form-control" type="text" name="veritac" placeholder="<?=lang('Sentence.entersmstac');?>" required>
                 <p class="input-desc"> </p>
             </div>
-            <input type="submit" class="btn w-100" value="<?=lang('Nav.login');?>">
+            <input type="submit" class="btn w-100" value="<?=lang('Nav.createacc');?>">
         <?=form_close();?>
     </div>
 </div>

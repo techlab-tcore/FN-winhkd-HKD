@@ -38,7 +38,7 @@ class Game_control extends BaseController
                                 $row['order'] = $g['order'];
                                 $row['category'] = $gtype['type'];
                                 $data[] = $row;
-                            elseif( $g['code']=='RCB' && $type['type']==33 ):
+                            elseif( $g['code']=='RCB' && $type['type']==3 ):
                                 $row = [];
                                 $row['status'] = $g['status'];
                                 $row['code'] = $g['code'];
@@ -1577,7 +1577,7 @@ class Game_control extends BaseController
                             $game .= '<p>'.$s['name'].'</p>';
                             $game .= '<div class="btn-wrap">';
 
-                            if( $s['code']=='OB3' ):
+                            if( $s['code']=='OB3' || $s['code']=='RCB' ):
                                 $game .= '<a class="btn" style="white-space: nowrap;" href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">'.lang('Label.betnow').'</a>';
                                 $game .= '<a class="btn-outline" href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">'.lang('Label.desktop').'</a>';
                             else:
@@ -1714,7 +1714,7 @@ class Game_control extends BaseController
 			foreach( $provider['data'] as $s ):
 				if( $data['session']==true ):
 					if( $s['category']==$gameType && $s['status']==1 ):
-                        if( $s['code']=='OB3' ):
+                        if( $s['code']=='OB3' || $s['code']=='RCB' ):
                             $game .= '<a href="javascript:void(0);" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">';
                         else:
                             $game .= '<a href="javascript:void(0);" onclick="gameLandingExpress(\'1\', \''.$s['name'].'\', \''.$s['code'].'\');">';
@@ -1812,7 +1812,7 @@ class Game_control extends BaseController
                     $game .= '<img src="'.$_ENV['gameProviderLogo'].'/'.$s['code'].'.png" title="'.$s['name'].'" alt="'.$s['name'].'" loading="lazy" cat="sport"></img>';
 
                     if( $s['category']==$gameType && $s['status']==1 ):
-                        if( $s['code']=='OB3' ):
+                        if( $s['code']=='OB3' || $s['code']=='RCB' ):
                             $game .= '<a href="javascript:void(0);" class="btn w-100" onclick="expressLobby(\''.$s['name'].'\', \''.$s['code'].'\');">'.strtoupper(lang('Nav.playgame')).'</a>';
                         else:
                             $game .= '<a href="javascript:void(0);" class="btn w-100" onclick="gameLandingExpress(\'1\', \''.$s['name'].'\', \''.$s['code'].'\');">'.strtoupper(lang('Nav.playgame')).'</a>';
