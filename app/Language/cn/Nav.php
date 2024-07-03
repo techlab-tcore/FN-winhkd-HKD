@@ -76,7 +76,7 @@ return [
     'newmember' => '新注册',
     'showall' => '全部',
     'special' => '特别',
-    'restore' => '全拉',
+    'restore' => '资金回收',
     'afflog' => '隶属佣金记录',
     'refresh' => '刷新',
     'rules' => '条规',
