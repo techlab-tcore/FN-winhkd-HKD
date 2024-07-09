@@ -23,7 +23,7 @@
                     <option value="HKD" selected><?=lang('Label.hongkong');?></option>
                 </select>
                 <div class="otp-flex">
-                    <input class="form-control" type="text" pattern="^[0-9]{8,12}$" name="mobile" placeholder="e.g. 0123456789" required>
+                    <input class="form-control" type="text" pattern="^[0-9]{8,12}$" name="mobile" placeholder="e.g. 95155555" required>
                     <a class="btn" id="timer" onclick="requestSmsTac2('smsRegisForm');"><?=lang('Nav.gettac');?></a>
                 </div>
                 <p class="input-desc"> </p>

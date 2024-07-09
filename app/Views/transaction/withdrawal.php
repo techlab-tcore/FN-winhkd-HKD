@@ -121,8 +121,8 @@ async function getUserDefaultBankCard()
                         $('.withdrawalForm [name=amount]').attr('min', 100);
                         $('.withdrawalForm [name=amount]').attr('max', 5000);
                     } else { // HKD
-                        $('.withdrawalForm [name=amount]').attr('placeholder', '<?=lang('Validation.minwthdrawal',[500]);?>');
-                        $('.withdrawalForm [name=amount]').attr('min', 500);
+                        $('.withdrawalForm [name=amount]').attr('placeholder', '<?=lang('Validation.minwthdrawal',[100]);?>');
+                        $('.withdrawalForm [name=amount]').attr('min', 100);
                         $('.withdrawalForm [name=amount]').attr('max', 200000);
                     }
 
