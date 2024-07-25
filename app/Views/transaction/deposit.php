@@ -121,7 +121,7 @@
         <div class="modal-content">
             <div class="modal-header border-light bg-55vp4">
                 <h1 class="modal-title fs-5"><?=lang('Nav.instanttransfer');?></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 bg-white">
                 <article class="depositScreen h-100" id="depositScreen"></article>

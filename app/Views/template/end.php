@@ -2756,8 +2756,19 @@ function copyRegUrl(url)
     .then((value) => {
         if (value.isConfirmed) {
             var str = $('.swal2-html-container')[0].innerText;
+            const toCopy = document.querySelector('#swal2-content');
+
+            // Create a fake `textarea` and set the contents to the text
+            const storage = document.createElement('textarea');
+            storage.value = toCopy.innerHTML;
+            toCopy.appendChild(storage);
             // console.log(str);
-            navigator.clipboard.writeText(str);
+            //navigator.clipboard.writeText(str);
+            // Copy the text in the fake `textarea` and remove the `textarea`
+            storage.select();
+            storage.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            toCopy.removeChild(storage);
         }
     });
 }
