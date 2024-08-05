@@ -243,6 +243,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         announcementPopList();
     }
 
+    getSEO();
+
     // Category
     // const tablotteryEvent = document.querySelector('div[target="#providersLottery"]');
     // tablotteryEvent.addEventListener('click', function (event) {

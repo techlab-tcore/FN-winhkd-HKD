@@ -4,6 +4,48 @@ use CodeIgniter\I18n\Time;
 
 class Content_control extends BaseController
 {
+    /*
+    SEO
+    */
+
+    public function contentSeo()
+    {
+        $lng = strtoupper($_SESSION['lang']);
+
+        $payload = [
+            // 'contentid' => $this->request->getpost('params')['contentid'], 
+        ];
+        $res = $this->content_model->selectAllContents($payload);
+        // echo json_encode($res);
+
+        if( $res['code'] == 1 && $res['data'] != [] ):
+            $data = [];
+            foreach( $res['data'] as $c ):
+                $verify = substr($c['contentId'],0,3);
+                if( $verify=='SEO' && $c['status']==true ):
+                    $row = [];
+                    $row['id'] = base64_encode($c['id']);
+                    $row['contentId'] = $c['contentId'];
+                    $row['title'] = $c['title'][$lng];
+                    $row['image'] = $c['thumbnail'][$lng];
+                    $row['content'] = $c['content'][$lng];
+                    $data[] = $row;
+                endif;
+            endforeach;
+            echo json_encode([
+                'code' => $res['code'],
+                'message' => $res['message'],
+                'data' => $data
+            ]);
+        else:
+            echo json_encode([
+                'code' => $res['code'],
+                'message' => $res['message'],
+                'data' => []
+            ]);
+        endif;
+    }
+
     public function getPromoContent()
     {
         $lng = strtoupper($_SESSION['lang']);

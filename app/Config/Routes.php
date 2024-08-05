@@ -203,6 +203,7 @@ $routes->get('content/affiliate', 'Content_control::contentAffiliate');
 $routes->get('content/daily-free-reward', 'Content_control::contentDailyFreeReward');
 $routes->get('content/affiliate-share-reward', 'Content_control::contentAffiliateShareReward');
 $routes->get('content/affiliate-loss-rebate', 'Content_control::contentAffiliateLossRebate');
+$routes->get('content/seo', 'Content_control::contentSeo');
 
 $routes->resource('Afflossrebate_control');
 $routes->post('list/affiliate/loss-rebate/history', 'Afflossrebate_control::affLossRebateHistory', ['filter' => 'auth']);

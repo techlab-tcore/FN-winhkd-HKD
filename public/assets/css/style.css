@@ -130,14 +130,14 @@ input.error{border-color:var(--color-red);background-image:url(../img/icons/erro
 .otp-flex .btn{width:10rem;}
 .form-select{height:2.375rem;border-color:var(--color-grey);}
 
-.select-wrap{position:relative;height:2.375rem;overflow:visible;}
+.select-wrap{position:relative;height:2.375rem;overflow:visible; z-index:1000;}
 .select-list-input[readonly]{background:#fff url(../img/icons/chevron_down.svg) right 10px center/1.222rem no-repeat;cursor:pointer;}
 .select-list-input[readonly].collapse{background-image:url(../img/icons/chevron_up.svg);}
 .select-list{background:#fff;color:#000;list-style:none;padding:1rem 0;box-shadow: 0px 0px 3px #0000004D;border-radius: 5px;position:absolute;left:0;right:0;top:100%;margin-top:3px;max-height:24rem;overflow:auto;}
 .select-list li{padding:5px 1rem;min-height:2.375rem;cursor:pointer;display: flex;align-items: center;}
 .select-list li.selected{background:rgba(var(--bs-primary-rgb), .8);}
 .select-list::-webkit-scrollbar-thumb{background-color:var(--color-primary);}
-.customSelect{display:none !important;}
+.customSelect{display:none !important; z-index:1000;}
 
 .form-flex{display:flex;margin-bottom:1.25rem;gap:.675rem}
 .form-flex .form-label{width:32.6%;flex:0 0 auto;height:38px;display:flex;align-items:center;margin:0 .625rem 0 0;}
@@ -195,7 +195,7 @@ table thead .icon-sort{float:right;margin-top:3px;padding:3px;cursor:pointer;}
 	.form-label,.input-correct{font-weight:normal;margin-bottom:10px;}
 	.form-div{margin-bottom:0.875rem;}
 	.form-div-checkbox{margin:1.312rem 0 2.5rem;}
-	.customSelect{display:block !important;}
+	.customSelect{display:block !important; z-index:1000;}
 	.select-list,.formSelect{display:none !important;}
 	.form-flex{display:block;}
 	.form-flex .form-label{width:100%;height:auto;margin-bottom:0.625rem;}

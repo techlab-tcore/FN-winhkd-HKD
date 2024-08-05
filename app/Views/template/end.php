@@ -3312,6 +3312,39 @@ function timer()
 }
 // End SMS Tac
 
+// SEO
+//getSEO();
+function getSEO()
+{
+    $.get('/content/seo', function(data, status) {
+        const obj = JSON.parse(data);
+        if( obj.code == 1 ) {
+            const seo = obj.data;
+            if( seo!='' )
+            {
+                seo.forEach( (item, index) => {
+                    //$('.seoTitle').html(item.title);
+                    //$('.seoContent').html(item.content);
+                    let content = item.content;
+                    let result = content.replace('<p>','');
+                    $('meta[name="description"]').attr("content", result);
+                    $('title').html(item.title);
+                });
+            }
+        } else if( obj.code==39 ) {
+            forceUserLogout();
+        }
+        // else {
+        //     swal.fire("Error!", obj.message + " (Code: "+obj.code+")", "error");
+        // }
+    })
+    .done(function() {
+    })
+    .fail(function() {
+    });
+}
+// End SEO
+
 function getProfile()
 {
     // $.get('/user-profile', function(data, status) {
