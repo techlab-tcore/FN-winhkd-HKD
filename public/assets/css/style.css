@@ -81,7 +81,7 @@ li{padding-left:.5rem;}
 .btn:hover{background:linear-gradient(180deg, #7E4901 0%, #F5C55E 50%, #7E4901 100%);color:#000000;}
 .btn-secondary{background:var(--color-gradient-dark);border-radius: 30px; transition: all .5s;color:#fff;}
 .btn-secondary:hover{background:linear-gradient(180deg, #212121 0%, #474747 33%, #212121 73%, #2E2E2E 100%);color:var(--color-primary);}
-.btn.disabled,.btn[disabled]{background:var(--color-grey); !important;color:#FFFFFF !important;}
+.btn.disabled,.btn[disabled]{background:var(--color-grey) !important;color:#FFFFFF !important;}
 .btn-outline{border: 2px solid #FFC136;border-radius: 30px;display:flex;align-items:center;justify-content:center;color:#fff;background:none;outline:none;min-height:2.375rem;font-size:1rem;padding:0.313rem 1.25rem;transition:color .3s, border-color .3s;}
 .btn-outline:hover{border-color:#8B5000;}
 .btn-outline.disabled,.btn-outline[disabled]{border-color:var(--color-grey);color:var(--color-grey);}
@@ -99,6 +99,80 @@ li{padding-left:.5rem;}
 
 .btn-wrap{display:flex;justify-content:stretch;gap:10px;}
 .btn-wrap a{flex:1 1 0;}
+
+/*
+Angpow
+*/
+
+.draggableRB, .draggable-lobby {
+    display: inline-block;
+	width: 50px;
+	height: 50px;
+	z-index: 1361;
+	/* touch-action: auto; */
+    position: absolute;
+}
+
+.btn-float-angpow .btn-float-close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/img/btn_close.png') no-repeat center center;
+    background-size: 100%;
+}
+
+.btn-float-angpow {
+    width: 9%;
+    height: 130px;
+    display: inline-block;
+    border-width: 0px;
+    position: fixed;
+    top: 80%;
+    left: 10px;
+    z-index: 1036;
+}
+
+.btn-float-angpow .angpow {
+    width: 100%;
+    display: block;
+    height: 100%;
+    background: url('../../assets/img/angpow.gif') no-repeat top left;
+    background-size: 100%;
+    border-width: 0;
+}
+
+.modal-angpow .modal-body {
+    min-height: 300px;
+    display: block;
+    position: relative;
+}
+
+.modal-angpow .modal-body.no-lossrebate {
+    background: url('../../assets/img/no_lossrebate.png') no-repeat center center;
+    background-size: 100%;
+}
+
+.modal-angpow .modal-body.claim-lossrebate {
+    background: url('../../assets/img/claim_lossrebate.png') no-repeat center center;
+    background-size: 100%;
+}
+
+.modal-angpow .modal-body.deposit-lossrebate {
+    background: url('../../assets/img/deposit_lossrebate.png') no-repeat center center;
+    background-size: 100%;
+}
+
+.modal-angpow .modal-body .btn-close-angpow {
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    outline: none;
+    border-width: 0px;
+    background: transparent;
+    padding: 0;
+}
 
 @media (max-width:991.9px){
 	.d-h5-none{display:none !important;overflow:hidden !important;}
@@ -704,7 +778,7 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 	.reminder-box{font-size:.875rem;}
 	.input-wrap .canvas-qr{width:180px;}
 	.box-black.box-withdraw{flex-wrap:wrap;gap:.625rem;}
-	.box-black.box-withdraw > div{width:calc(50px - .313rem;);}
+	.box-black.box-withdraw > div{width:calc(50px - .313rem);}
 	.box-black.box-withdraw p:last-child{font-size:1.125rem;}
 	.box-black.box-withdraw .info-large{width:100%;}
 	.user-margin .box-black .btn{width:100%;}
@@ -725,8 +799,22 @@ h1 span .icon-chevron-right{font-size:0.75rem;margin-left:5px;}
 }
 
 @media (max-width:991.9px){
+	.btn-float-angpow {
+        width: 18%;
+    }
+
+	.modal-angpow .modal-body .btn-close-angpow {
+		width: 30px;
+	}
 }
 @media (max-width:575.9px){
+	.btn-float-angpow {
+        width: 30%;
+    }
+
+	.modal-angpow .modal-body .btn-close-angpow {
+		width: 30px;
+	}
 }
 
 .maintenance {

@@ -196,6 +196,9 @@ $routes->get('fortune-wheel/top-20', 'Fortunewheel_control::fortuneWheelTopList'
 $routes->get('fortune-wheel/get', 'Fortunewheel_control::fortuneWheel', ['filter' => 'auth']);
 $routes->get('fortune-wheel/spin', 'Fortunewheel_control::spinFortuneWheel', ['filter' => 'auth']);
 
+$routes->resource('Lossrebate_control');
+$routes->get('loss-rebate/request', 'Lossrebate_control::approveLossRebate', ['filter' => 'auth']);
+
 $routes->resource('Content_control');
 $routes->get('list/promotion/read-only', 'Content_control::getPromoContentList');
 $routes->post('promotion/read-only/get', 'Content_control::getPromoContent');

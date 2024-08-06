@@ -1,5 +1,15 @@
 </div>
 
+<section class="modal fade modal-angpow" id="modal-angpow" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-angpow" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-2">
+                <button type="button" class="btn-close-angpow" data-bs-dismiss="modal"><img class="w-100 d-block" src="<?=base_url('assets/img/btn_close.png');?>"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
     <div id="liveToast" class="toast hide bg-secondary" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-primary text-white">
@@ -509,6 +519,13 @@
 
 <script src="<?=base_url('../assets/vendors/draggable/draggabilly.js');?>"></script>
 <script src="<?=base_url('../assets/vendors/draggable/draggabilly.pkgd.min.js');?>"></script>
+
+<!-- claim Self Loss Rebate -->
+<nav class="btn-float-angpow draggableRB" id="btn-float-angpow">
+    <a href="javascript:void(0);" class="btn-float-close" onclick="closeFloatAngpow();"></a>
+    <button type="button" class="angpow" onclick="redeemLossRebate()"></button>
+</nav>
+
 <?php endif; ?>
 
 </body>
@@ -523,6 +540,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     callingSportMenu();
     callingCasinoMenu();
     callingLottoMenu();
+
+    if( logged )
+    {
+        var $draggable = $('.draggableRB').draggabilly({
+            containment: true
+        });
+
+        var startOrientation = $('.draggableRB').data('draggabilly');
+        //startOrientation.setPosition(1380,1545);
+
+        $draggable.on('staticClick',function( event, pointer ) {
+            // event.stopPropagation();
+            // event.preventDefault();
+            // redeemLossRebate();
+        });
+
+        window.addEventListener("orientationchange", function() {
+            // console.log("the orientation of the device is now " + screen.orientation.angle);
+            var revertOrientation = $('.draggableRB').data('draggabilly');
+            //revertOrientation.setPosition(1380,545);
+        }, false);
+    }
     
     if( logged )
     {
@@ -3177,6 +3216,44 @@ if( logged )
     startRefresh();
 }
 // End Jackpot
+
+// Loss Rebate
+function redeemLossRebate()
+{
+    generalLoading();
+
+    $('.btn-float.angpow').prop('disabled',true);
+
+    $.get('/loss-rebate/request', function(data, status) {
+        const obj = JSON.parse(data);
+        if( obj.code==1 ) {
+            refreshProfile();
+            $('.modal-angpow').modal('show');
+            $('.modal-angpow .modal-body').addClass('claim-lossrebate');
+        } else if( obj.code==62 ) {
+            $('.modal-angpow').modal('show');
+            $('.modal-angpow .modal-body').addClass('deposit-lossrebate');
+        } else if( obj.code==22 || obj.code==84 ) {
+            $('.modal-angpow').modal('show');
+            $('.modal-angpow .modal-body').addClass('no-lossrebate');
+        } else {
+            swal.fire("Error!", obj.message + " (Code: "+obj.code+")", "error");
+        }
+    })
+    .done(function() {
+        swal.close();
+        $('.btn-float.angpow').prop('disabled',false);
+    })
+    .fail(function() {
+        swal.fire("Error!", "Oopss! There are something wrong. Please try again later.", "error");
+    });
+}
+
+function closeFloatAngpow()
+{
+	document.getElementById("btn-float-angpow").style.display="none";
+}
+// End Loss Rebate
 
 // SMS Tac
 function requestSmsTac(dom)

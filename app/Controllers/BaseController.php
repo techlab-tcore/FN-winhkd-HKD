@@ -21,6 +21,7 @@ use App\Models\Promotion_model;
 use App\Models\Banner_model;
 use App\Models\Affiliate_model;
 use App\Models\Afflossrebate_model;
+use App\Models\Lossrebate_model;
 use App\Models\Content_model;
 use App\Models\Jackpot_model;
 use App\Models\Support_model;
@@ -99,6 +100,7 @@ abstract class BaseController extends Controller
         $this->banner_model = new banner_model();
         $this->affiliate_model = new affiliate_model();
         $this->afflossrebate_model = new afflossrebate_model();
+        $this->lossrebate_model = new lossrebate_model();
         $this->content_model = new content_model();
         $this->jackpot_model = new jackpot_model();
         $this->support_model = new support_model();
