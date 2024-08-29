@@ -184,7 +184,7 @@
             <h1 class="text-nowrap justify-content-center"><?=lang('Nav.downloadapp');?></h1>
             <div class="text-center mx-auto p-0 rounded-3 col-6 col-lg-6 col-md-3">
                 <div class="qrcode">
-                    <img src="../assets/img/qrcode.png" alt="QR Code">
+                    <img src="../assets/img/winhkd_qr.svg" alt="QR Code">
                 </div>
                 <!--<figure id="appQR" class="p-0 m-0"></figure>-->
                 <!--<a href="">
